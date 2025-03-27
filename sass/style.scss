@@ -68,7 +68,7 @@
     }
     100% {
         opacity: 0;
-        z-index: -1;
+        z-index: -3;
     }
 }
 
@@ -269,7 +269,7 @@ a {
   }
   
   .modal-content img {
-    max-width: 200px; /* ou 50%, selon ce que tu préfères */
+    max-width: 200px; /* ou 50%, selon ce que je préfère */
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -289,7 +289,6 @@ a {
     text-align: justify;
   }
   
-  
   .close-btn {
     position: absolute;
     top: 10px;
@@ -300,11 +299,6 @@ a {
     cursor: pointer;
   }
   
-
-
-
-
-
   /** Projet **/
 .projet {
     width: 100%;
@@ -484,10 +478,10 @@ projet .card_titles .empty {
 #contact {
     background-color: #f8f4ef;
     padding: 40px;
-    margin-top: 60px;
+    margin-top: 20px;
     border-radius: 10px;
    /** box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);**/
-    box-shadow: 0px 6px 10px 0px rgba(0, 0, 38, 0.15);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 38, 0.15);
     margin-bottom: 20px;
   }
   
@@ -552,23 +546,21 @@ projet .card_titles .empty {
   /* Style du bouton d'envoi */
   #contact button {
     background-color: #dec9b6;
-    color: #704C33(192, 36, 36);
     padding: 12px 20px;
     border: none;
     border-radius: 25px 0px 25px 0px;
     cursor: pointer;
     width: 100%;
     font-size: 16px;
-    color: #704c33;
+    color: #704c33;  
   }
   
   #contact button:hover {
-    background-color: #dec9b6;
+    /**background-color: #dec9b6;**/
+        background: linear-gradient(#dec9b6, #f8f4ef);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   }
   
-
-
-
 
 
 /**footer**/
