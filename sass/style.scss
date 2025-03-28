@@ -64,13 +64,13 @@
 /* Animation de fade */
 @keyframes fadeOut {
     0% {
-        opacity: 3;
+      opacity: 1;
     }
     100% {
-        opacity: 0;
-        z-index: -3;
+      opacity: 0;
+      z-index: -3;
     }
-}
+  }
 
 /* Style du texte */
 .loading_text {
@@ -298,6 +298,10 @@ a {
     color: #333;
     cursor: pointer;
   }
+  .modal {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
   
   /** Projet **/
 .projet {
@@ -309,13 +313,15 @@ a {
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: 0px 6px 10px 0px rgba(0, 0, 38, 0.15);
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .titre_projet {
     text-align: center;
     font-family: Roboto, sans-serif;
-    /**font-size: 18px;**/
     color: #704c33;
 }
 
@@ -325,7 +331,8 @@ p {
 }
 
 .projet_cards {
-    width: 340px;
+    width: 100%;
+    max-width: 340px; /* Définir une largeur maximale pour les cartes */
     background-color: #ffffff;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -335,13 +342,9 @@ p {
 }
 
 .projet_cards img {
-    width: 340px;
+    width: 100%; /* Faire en sorte que l'image occupe toute la largeur du conteneur */
     height: 190px;
-    top: -57px;
-    left: -3px;
-    gap: 0px;
-    opacity: 0px;
-    object-fit: cover;
+    object-fit: cover; /* Adapter l'image sans la déformer */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -379,8 +382,8 @@ a {
     background: #FFFFFF;
 }
 
-
-projet .card_titles .empty {
+/* Section coeur (empty et full) */
+.projet .card_titles .empty {
     position: absolute;
     top: 83%;
     right: 10%;
@@ -399,12 +402,11 @@ projet .card_titles .empty {
     opacity: 0;
 }
 
+/* Conteneur du bouton "Site" */
 .projet .card .container_new p {
     display: flex;
     justify-content: center;
     align-items: center;
-    /**height: 29px;
-    width: 80px;**/
     padding: 5px 15px;
     color: #704C33;
     background-color: #dec9b6;
@@ -429,49 +431,15 @@ projet .card_titles .empty {
     right: 5%;
 }
 
-
-/**heart**/
-.heart {
-    position: absolute;
-    width: 22px;
-    height: 21px;
-    font-size: 22px;
-    top: 20%;
-    left: 85%;
-    right: 10%;
-
-    .full {
-        display: none;
-        /*Cache le cœur plein par défaut*/
-        color: #f8f4ef;
-        /*Couleur du cœur plein*/
-        transition: color 0.3s;
-        /*Animation douce pour le changement de couleur*/
-        width: 22px;
-        height: 21px;
-    }
-
-    .empty {
-        color: black;
-        /*Couleur du cœur vide*/
-        transition: color 0.3s;
-        /*Animation douce pour le changement de couleur*/
-        width: 22px;
-        height: 21px;
-    }
-
-    &:hover {
-        .empty {
-            display: none;
-            /*Cache le cœur vide au survol*/
-        }
-
-        .full {
-            display: inline;
-            /*Affiche le cœur plein au survol*/
-        }
+/* Responsivité : pour petits écrans */
+@media (max-width: 768px) {
+    .projet_cards {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0; /* Espacement pour les petits écrans */
     }
 }
+
 
 
 /* Style de la section contact */
@@ -588,7 +556,14 @@ projet .card_titles .empty {
     list-style: none;
     color: #f8f4ef;
 }
-
+.footer_links_simple {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 /**.footer_links_bold {
     display: flex;
     justify-content: flex-start;
@@ -599,14 +574,6 @@ projet .card_titles .empty {
     line-height: 18.75px;
 }**/
 
-.footer_links_simple {
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
 
 /**.footer_links_bold .fa-solid {
     width: 16px;
@@ -656,35 +623,14 @@ a {
         gap: 10px;
     }
 
-    /** .titre_projet {
-            width: 70%;
-        }**/
-
-    .projet {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
+  
     .projet_cards {
-       /** width: 490px;
-        height: 250px;**/
-        margin: 20px;
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0; /* Espacement pour les petits écrans */
     }
+}
 
-    .projet_cards img {
-        width: 490px;
-        /** opacity: 0px;**/
-    }
-
-    .card_content {
-        padding: 0px;
-        padding-left: 15px;
-    }
-
-    .card_titles {
-        margin-right: 5px;
-    }
 
     footer {
         display: flex;
