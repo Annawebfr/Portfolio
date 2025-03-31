@@ -6,7 +6,7 @@
 
 $primary-color: #704C33; // Couleur principale
 $secondary-color: #F8f4ef; // Couleur secondaire
-$accent-color: #DEC9B6; // Couleur d'accent
+$tertiary-color: #DEC9B6; // Couleur d'accent
 
 .loading {
     background-color: #f8f4ef;
@@ -47,11 +47,18 @@ $accent-color: #DEC9B6; // Couleur d'accent
 }
 
 @keyframes rotation {
-    0% {
+
+    /** 0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }**/
+    from {
         transform: rotate(0deg);
     }
 
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
@@ -78,8 +85,10 @@ $accent-color: #DEC9B6; // Couleur d'accent
 
     100% {
         opacity: 0;
-       /** z-index: -3;**/
-       display: none;
+        visibility: hidden;
+        pointer-events: none;
+        /** z-index: -3;**/
+        /**display: none;**/
     }
 }
 
@@ -268,26 +277,28 @@ a {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    overflow: auto; /* Permet de scroller si besoin */
+    overflow: auto;
+    /* Permet de scroller si besoin */
 }
 
 .modal-content {
     background-color: #f8f8f8;
-    width:50%;
-   /** margin: 10% auto;**/
+    width: 50%;
     padding: 20px;
     border-radius: 10px;
-    /**max-width: 600px;**/
     text-align: center;
     position: relative;
-
-    top: 50%;  /* Centre verticalement */
-    left: 50%; /* Centre horizontalement */
-    transform: translate(-50%, -50%); /* Ajustement parfait */
-
-     /* ✅ Nouvelle règle pour éviter le dépassement */
-     max-height: 90vh; /* Hauteur max de 90% de l’écran */
-     overflow-y: auto; /* Active le scroll si le contenu est trop long */
+    top: 50%;
+    /* Centre verticalement */
+    left: 50%;
+    /* Centre horizontalement */
+    transform: translate(-50%, -50%);
+    /* Ajustement parfait */
+    /* Nouvelle règle pour éviter le dépassement */
+    max-height: 90vh;
+    /* Hauteur max de 90% de l’écran */
+    overflow-y: auto;
+    /* Active le scroll si le contenu est trop long */
 }
 
 .modal-content img {
@@ -325,7 +336,8 @@ a {
 
 /* === MODALE SKILLS === */
 .modal {
-    display: none; /* Cachée par défaut */
+    display: none;
+    /* Cachée par défaut */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -349,37 +361,40 @@ a {
     max-height: 90vh;
     overflow-y: auto;
 }
-    h2 {
-        font-size: 22px;
-        color: #704c33;
-    }
 
-    .skills-container {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        background-color: #F8f4ef;
-    }
-   
-    .skills-category {
-        margin-bottom: 20px;
-        background: linear-gradient(#dec9b6, #f8f4ef);
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        font-size: 24px;          /* Taille des icônes un peu plus grande */
-        color: #704c33;           /* Couleur marron pour matcher ton design */
-        margin-right: 5px;    
-    }
-   
-        h2 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
+h2 {
+    font-size: 22px;
+    color: #704c33;
+}
 
-        p {
-            font-size: 16px;   
-        }
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #F8f4ef;
+}
+
+.skills-category {
+    margin-bottom: 20px;
+    background: linear-gradient(#dec9b6, #f8f4ef);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    /* Taille des icônes un peu plus grande */
+    color: #704c33;
+    /* Couleur marron pour matcher ton design */
+    margin-right: 5px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 16px;
+}
 
 /* Bouton fermer */
 .close-btn {
@@ -394,30 +409,27 @@ a {
 
 .skills-category p {
     display: flex;
-  /** flex-wrap: wrap;         
+    /** flex-wrap: wrap;         
     justify-content: center;  
-    align-items: center;  **/   
-    gap: 10px;              
-    text-align: center;       
-    font-size: 16px;          
+    align-items: center;  **/
+    gap: 10px;
+    text-align: center;
+    font-size: 16px;
     color: #704c33;
 }
 
 
-
-
 .skills-category i {
     font-size: 20px;
-    color: #704c33; /* Marron pour matcher ton design */
+    color: #704c33;
+    /* Marron pour matcher ton design */
     margin-right: 5px;
 }
 
 
 
-
-
 /** Projet **/
-.projet {  
+.projet {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -428,7 +440,7 @@ a {
     background-color: #DEC9B6;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top:-4%;
+    margin-top: -4%;
     /**padding-left: 20px;
     padding-right: 20px;**/
     box-shadow: 0px 6px 10px 0px rgba(0, 0, 38, 0.15);
@@ -450,7 +462,8 @@ a {
 .projet_cards img {
     width: 490px;
     height: 190px;
-    object-fit: cover;/* Adapter l'image sans la déformer */
+    object-fit: cover;
+    /* Adapter l'image sans la déformer */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     top: -57px;
@@ -467,11 +480,12 @@ a {
 
 .card_titles {
     font-family: "Cormorant Garamond", sans-serif;
-    color: c704c33;
+    color: #704c33;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 5px;
 }
+
 .titre_projet {
     text-align: center;
     margin-top: 60px;
@@ -479,6 +493,7 @@ a {
     font-size: 25px;
     color: #704C33;
 }
+
 .subtitle_projet {
     font-family: "Cormorant Garamond", ;
     font-size: 17px;
@@ -486,6 +501,7 @@ a {
     text-align: left;
     color: #704c33;
 }
+
 p {
     font-family: "Cormorant Garamond", ;
     text-align: center;
@@ -558,7 +574,7 @@ a {
 
 /* Style de la section contact */
 #contact {
-    width:80%;
+    width: 80%;
     margin-left: 10%;
     margin-right: 10%;
     background-color: #f8f4ef;
@@ -675,7 +691,7 @@ a {
 }
 
 .footer_links_simple {
-    font-family:"Cormorant Garamond", sans-serif;
+    font-family: "Cormorant Garamond", sans-serif;
     font-size: 20px;
     text-align: left;
     display: flex;
@@ -695,10 +711,13 @@ a {
 /* Responsive - Ajuster la grille en fonction de la taille de l'écran */
 @media (max-width: 1024px) {
     .projet_cards {
-        flex: 1 1 calc(50% - 20px); /* 2 cartes par ligne sur tablette */
+        flex: 1 1 calc(50% - 20px);
+        /* 2 cartes par ligne sur tablette */
     }
+
     .modal-content {
-        width: 70%; /* Augmente la largeur pour remplir plus l’écran */
+        width: 70%;
+        /* Augmente la largeur pour remplir plus l’écran */
     }
 }
 
@@ -713,10 +732,13 @@ a {
 
     .modal-content {
         width: 80%;
-        padding: 15px; /* Réduire l’espace intérieur */
+        padding: 15px;
+        /* Réduire l’espace intérieur */
     }
+
     .modal-content figcaption {
-        font-size: 16px; /* Réduire la taille du texte */
+        font-size: 16px;
+        /* Réduire la taille du texte */
     }
 
     .titre_reserver {
@@ -726,7 +748,8 @@ a {
 
 
     .projet_cards {
-        flex: 1 1 calc(100% - 20px); /* 1 carte par ligne sur mobile */
+        flex: 1 1 calc(100% - 20px);
+        /* 1 carte par ligne sur mobile */
     }
 
     .reservation p {
@@ -749,7 +772,8 @@ a {
     }
 
     .projet_cards {
-        margin: 10px 0; /* Espacement pour les petits écrans */
+        margin: 10px 0;
+        /* Espacement pour les petits écrans */
     }
 
 
@@ -768,27 +792,38 @@ a {
         gap: 15px;
     }
 }
+
 @media (max-width: 430px) {
     .projet_cards {
-        flex: 1 1 calc(100% - 20px); /* 1 carte par ligne sur mobile */
+        flex: 1 1 calc(100% - 20px);
+        /* 1 carte par ligne sur mobile */
     }
+
     .modal-content {
-        width: 90%; /* Occupe presque tout l’écran */
+        width: 90%;
+        /* Occupe presque tout l’écran */
         padding: 10px;
     }
+
     .modal-content img {
-        max-width: 150px; /* Réduire l’image */
+        max-width: 150px;
+        /* Réduire l’image */
     }
+
     .modal-content figcaption {
-        font-size: 14px; /* Plus petit texte */
+        font-size: 14px;
+        /* Plus petit texte */
     }
 }
+
 @media (max-width: 375px) {
     .modal-content {
         width: 95%;
         padding: 8px;
     }
+
     .close-btn {
-        font-size: 20px; /* Rendre le bouton plus petit */
+        font-size: 20px;
+        /* Rendre le bouton plus petit */
     }
 }

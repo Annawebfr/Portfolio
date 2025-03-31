@@ -44,10 +44,16 @@
 }
 
 @keyframes rotation {
-  0% {
-    transform: rotate(0deg);
+  /** 0% {
+      transform: rotate(0deg);
   }
   100% {
+      transform: rotate(360deg);
+  }**/
+  from {
+    transform: rotate(0deg);
+  }
+  to {
     transform: rotate(360deg);
   }
 }
@@ -69,8 +75,10 @@
   }
   100% {
     opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     /** z-index: -3;**/
-    display: none;
+    /**display: none;**/
   }
 }
 /* Style du texte */
@@ -244,24 +252,28 @@ a {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto; /* Permet de scroller si besoin */
+  overflow: auto;
+  /* Permet de scroller si besoin */
 }
 
 .modal-content {
   background-color: #f8f8f8;
   width: 50%;
-  /** margin: 10% auto;**/
   padding: 20px;
   border-radius: 10px;
-  /**max-width: 600px;**/
   text-align: center;
   position: relative;
-  top: 50%; /* Centre verticalement */
-  left: 50%; /* Centre horizontalement */
-  transform: translate(-50%, -50%); /* Ajustement parfait */
-  /* ✅ Nouvelle règle pour éviter le dépassement */
-  max-height: 90vh; /* Hauteur max de 90% de l’écran */
-  overflow-y: auto; /* Active le scroll si le contenu est trop long */
+  top: 50%;
+  /* Centre verticalement */
+  left: 50%;
+  /* Centre horizontalement */
+  transform: translate(-50%, -50%);
+  /* Ajustement parfait */
+  /* Nouvelle règle pour éviter le dépassement */
+  max-height: 90vh;
+  /* Hauteur max de 90% de l’écran */
+  overflow-y: auto;
+  /* Active le scroll si le contenu est trop long */
 }
 
 .modal-content img {
@@ -298,7 +310,8 @@ a {
 
 /* === MODALE SKILLS === */
 .modal {
-  display: none; /* Cachée par défaut */
+  display: none;
+  /* Cachée par défaut */
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -338,11 +351,13 @@ h2 {
 .skills-category {
   margin-bottom: 20px;
   background: linear-gradient(#dec9b6, #f8f4ef);
-  padding: 10px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  font-size: 24px; /* Taille des icônes un peu plus grande */
-  color: #704c33; /* Couleur marron pour matcher ton design */
+  font-size: 24px;
+  /* Taille des icônes un peu plus grande */
+  color: #704c33;
+  /* Couleur marron pour matcher ton design */
   margin-right: 5px;
 }
 
@@ -369,8 +384,8 @@ p {
 .skills-category p {
   display: flex;
   /** flex-wrap: wrap;         
-    justify-content: center;  
-    align-items: center;  **/
+  justify-content: center;  
+  align-items: center;  **/
   gap: 10px;
   text-align: center;
   font-size: 16px;
@@ -379,7 +394,8 @@ p {
 
 .skills-category i {
   font-size: 20px;
-  color: #704c33; /* Marron pour matcher ton design */
+  color: #704c33;
+  /* Marron pour matcher ton design */
   margin-right: 5px;
 }
 
@@ -418,7 +434,8 @@ p {
   width: 490px;
   height: 190px;
   -o-object-fit: cover;
-     object-fit: cover; /* Adapter l'image sans la déformer */
+     object-fit: cover;
+  /* Adapter l'image sans la déformer */
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   top: -57px;
@@ -435,7 +452,7 @@ p {
 
 .card_titles {
   font-family: "Cormorant Garamond", sans-serif;
-  color: c704c33;
+  color: #704c33;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 5px;
@@ -663,10 +680,12 @@ a {
 /* Responsive - Ajuster la grille en fonction de la taille de l'écran */
 @media (max-width: 1024px) {
   .projet_cards {
-    flex: 1 1 calc(50% - 20px); /* 2 cartes par ligne sur tablette */
+    flex: 1 1 calc(50% - 20px);
+    /* 2 cartes par ligne sur tablette */
   }
   .modal-content {
-    width: 70%; /* Augmente la largeur pour remplir plus l’écran */
+    width: 70%;
+    /* Augmente la largeur pour remplir plus l’écran */
   }
 }
 @media (min-width: 768px) {
@@ -678,17 +697,20 @@ a {
   }
   .modal-content {
     width: 80%;
-    padding: 15px; /* Réduire l’espace intérieur */
+    padding: 15px;
+    /* Réduire l’espace intérieur */
   }
   .modal-content figcaption {
-    font-size: 16px; /* Réduire la taille du texte */
+    font-size: 16px;
+    /* Réduire la taille du texte */
   }
   .titre_reserver {
     width: 100%;
     font-size: 40px;
   }
   .projet_cards {
-    flex: 1 1 calc(100% - 20px); /* 1 carte par ligne sur mobile */
+    flex: 1 1 calc(100% - 20px);
+    /* 1 carte par ligne sur mobile */
   }
   .reservation p {
     width: 100%;
@@ -707,7 +729,8 @@ a {
     gap: 10px;
   }
   .projet_cards {
-    margin: 10px 0; /* Espacement pour les petits écrans */
+    margin: 10px 0;
+    /* Espacement pour les petits écrans */
   }
   footer {
     display: flex;
@@ -725,17 +748,21 @@ a {
 }
 @media (max-width: 430px) {
   .projet_cards {
-    flex: 1 1 calc(100% - 20px); /* 1 carte par ligne sur mobile */
+    flex: 1 1 calc(100% - 20px);
+    /* 1 carte par ligne sur mobile */
   }
   .modal-content {
-    width: 90%; /* Occupe presque tout l’écran */
+    width: 90%;
+    /* Occupe presque tout l’écran */
     padding: 10px;
   }
   .modal-content img {
-    max-width: 150px; /* Réduire l’image */
+    max-width: 150px;
+    /* Réduire l’image */
   }
   .modal-content figcaption {
-    font-size: 14px; /* Plus petit texte */
+    font-size: 14px;
+    /* Plus petit texte */
   }
 }
 @media (max-width: 375px) {
@@ -744,6 +771,7 @@ a {
     padding: 8px;
   }
   .close-btn {
-    font-size: 20px; /* Rendre le bouton plus petit */
+    font-size: 20px;
+    /* Rendre le bouton plus petit */
   }
 }/*# sourceMappingURL=style.css.map */
