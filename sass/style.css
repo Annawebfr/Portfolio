@@ -6,7 +6,8 @@
 }
 
 .loading {
-  background-color: #f8f4ef; /* Couleur plus douce */
+  background-color: #f8f4ef;
+  /* Couleur plus douce */
   width: 100vw;
   height: 100vh;
   z-index: 5;
@@ -14,7 +15,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeOut 5s forwards; /* Transition plus fluide */
+  animation: fadeOut 5s forwards;
+  /* Transition plus fluide */
   flex-direction: column;
   text-align: center;
 }
@@ -24,7 +26,8 @@
   height: 120px;
   border-radius: 50%;
   border: 8px solid transparent;
-  border-top: 8px solid #704C33; /* Couleur plus professionnelle */
+  border-top: 8px solid #704C33;
+  /* Couleur plus professionnelle */
   position: absolute;
   animation: rotation 3s ease-in-out infinite, colorChange 4s ease-in-out infinite;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -62,20 +65,23 @@
 /* Animation de fade */
 @keyframes fadeOut {
   0% {
-    opacity: 3;
+    opacity: 1;
   }
   100% {
     opacity: 0;
-    z-index: -3;
+    /** z-index: -3;**/
+    display: none;
   }
 }
 /* Style du texte */
 .loading_text {
   font-size: 30px;
-  font-family: "roboto, sans-serif";
+  font-family: "Cormorant Garamond";
   color: #704C33;
-  margin-top: -30px; /* Espace entre le loader et le texte */
-  animation: fadeIn 1s forwards; /* Effet de fade-in pour le texte */
+  margin-top: -30px;
+  /* Espace entre le loader et le texte */
+  animation: fadeIn 1s forwards;
+  /* Effet de fade-in pour le texte */
 }
 
 /* Animation d’apparition du texte */
@@ -139,7 +145,7 @@ h1 {
   width: 315px;
   height: 46px;
   margin-top: 17px;
-  font-family: "roboto", sans-serif;
+  font-family: "Cormorant Garamond", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 21px;
@@ -151,7 +157,7 @@ h1 {
 
 .titre_liens {
   width: 275px;
-  font-family: Roboto;
+  font-family: "Cormorant Garamond", sans-serif;
   font-size: 18px;
   align-items: center;
   top: 152px;
@@ -165,6 +171,7 @@ h1 {
 a {
   color: #F8f4ef;
   text-decoration: none;
+  font-family: "Cormorant Garamond", sans-serif;
 }
 
 /*fonctionement*/
@@ -173,7 +180,7 @@ a {
   height: 31px;
   margin-bottom: 20px;
   margin-top: 25px;
-  font-family: Roboto, sans-serif;
+  font-family: "Cormorant Garamond", sans-serif;
   font-size: 18px;
   color: #F8f4ef;
 }
@@ -190,7 +197,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   width: 335px;
-  font-family: roboto, sans-serif;
+  font-family: "Cormorant Garamond", sans-serif;
   font-size: 16px;
   left: 20px;
 }
@@ -237,21 +244,29 @@ a {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto; /* Permet de scroller si besoin */
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 10% auto;
+  background-color: #f8f8f8;
+  width: 50%;
+  /** margin: 10% auto;**/
   padding: 20px;
   border-radius: 10px;
-  width: 60%;
   /**max-width: 600px;**/
   text-align: center;
   position: relative;
+  top: 50%; /* Centre verticalement */
+  left: 50%; /* Centre horizontalement */
+  transform: translate(-50%, -50%); /* Ajustement parfait */
+  /* ✅ Nouvelle règle pour éviter le dépassement */
+  max-height: 90vh; /* Hauteur max de 90% de l’écran */
+  overflow-y: auto; /* Active le scroll si le contenu est trop long */
 }
 
 .modal-content img {
-  max-width: 200px; /* ou 50%, selon ce que je préfère */
+  max-width: 200px;
+  /* ou 50%, selon ce que je préfère */
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -262,8 +277,8 @@ a {
 }
 
 .modal-content figcaption {
-  font-size: 16px;
-  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-family: "Cormorant Garamond", sans-serif;
   line-height: 1.6;
   margin-top: 10px;
   padding: 0 10px;
@@ -281,32 +296,116 @@ a {
   cursor: pointer;
 }
 
-/** Projet **/
-.projet {
+/* === MODALE SKILLS === */
+.modal {
+  display: none; /* Cachée par défaut */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  padding-top: 50px;
-  padding-bottom: 66px;
-  background-color: #DEC9B6;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-shadow: 0px 6px 10px 0px rgba(0, 0, 38, 0.15);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.titre_projet {
+.modal-content {
+  background-color: #F8f4ef;
+  width: 70%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  font-family: Roboto, sans-serif;
-  /**font-size: 18px;**/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+h2 {
+  font-size: 22px;
   color: #704c33;
 }
 
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #F8f4ef;
+}
+
+.skills-category {
+  margin-bottom: 20px;
+  background: linear-gradient(#dec9b6, #f8f4ef);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 24px; /* Taille des icônes un peu plus grande */
+  color: #704c33; /* Couleur marron pour matcher ton design */
+  margin-right: 5px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
 p {
-  color: #704C33;
+  font-size: 16px;
+}
+
+/* Bouton fermer */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.skills-category p {
+  display: flex;
+  /** flex-wrap: wrap;         
+    justify-content: center;  
+    align-items: center;  **/
+  gap: 10px;
   text-align: center;
+  font-size: 16px;
+  color: #704c33;
+}
+
+.skills-category i {
+  font-size: 20px;
+  color: #704c33; /* Marron pour matcher ton design */
+  margin-right: 5px;
+}
+
+/** Projet **/
+.projet {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-around;
+  gap: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #DEC9B6;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: -4%;
+  /**padding-left: 20px;
+  padding-right: 20px;**/
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 38, 0.15);
 }
 
 .projet_cards {
-  width: 340px;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(33.33% - 40px);
+  max-width: 340px;
   background-color: #ffffff;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -316,16 +415,16 @@ p {
 }
 
 .projet_cards img {
-  width: 340px;
+  width: 490px;
   height: 190px;
+  -o-object-fit: cover;
+     object-fit: cover; /* Adapter l'image sans la déformer */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   top: -57px;
   left: -3px;
   gap: 0px;
   opacity: 0px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
 }
 
 .card_content {
@@ -335,24 +434,40 @@ p {
 }
 
 .card_titles {
-  font-family: "Roboto", sans-serif;
+  font-family: "Cormorant Garamond", sans-serif;
+  color: c704c33;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 5px;
 }
 
+.titre_projet {
+  text-align: center;
+  margin-top: 60px;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 25px;
+  color: #704C33;
+}
+
 .subtitle_projet {
-  font-family: "Roboto", sans-serif;
+  font-family: "Cormorant Garamond";
   font-size: 17px;
-  font-weight: 300;
   margin-top: 5px;
+  text-align: left;
   color: #704c33;
-  justify-content: left;
+}
+
+p {
+  font-family: "Cormorant Garamond";
+  text-align: center;
+  font-size: 20px;
+  color: #704C33;
 }
 
 a {
   color: #704c33;
   text-decoration: none;
+  font-family: "Cormorant Garamond", sans-serif;
 }
 
 .cards .projet_card {
@@ -362,7 +477,8 @@ a {
   background: #FFFFFF;
 }
 
-projet .card_titles .empty {
+/* Section coeur (empty et full) */
+.projet .card_titles .empty {
   position: absolute;
   top: 83%;
   right: 10%;
@@ -381,19 +497,18 @@ projet .card_titles .empty {
   opacity: 0;
 }
 
+/* Conteneur du bouton "Site" */
 .projet .card .container_new p {
   display: flex;
   justify-content: center;
   align-items: center;
-  /**height: 29px;
-  width: 80px;**/
   padding: 5px 15px;
   color: #704C33;
   background-color: #dec9b6;
   border-radius: 5%;
   margin-left: 10px;
   margin-top: 5px;
-  font-family: Roboto;
+  font-family: "Cormorant Garamond", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 16.41px;
@@ -411,45 +526,11 @@ projet .card_titles .empty {
   right: 5%;
 }
 
-/**heart**/
-.heart {
-  position: absolute;
-  width: 22px;
-  height: 21px;
-  font-size: 22px;
-  top: 20%;
-  left: 85%;
-  right: 10%;
-}
-.heart .full {
-  display: none;
-  /*Cache le cœur plein par défaut*/
-  color: #f8f4ef;
-  /*Couleur du cœur plein*/
-  transition: color 0.3s;
-  /*Animation douce pour le changement de couleur*/
-  width: 22px;
-  height: 21px;
-}
-.heart .empty {
-  color: black;
-  /*Couleur du cœur vide*/
-  transition: color 0.3s;
-  /*Animation douce pour le changement de couleur*/
-  width: 22px;
-  height: 21px;
-}
-.heart:hover .empty {
-  display: none;
-  /*Cache le cœur vide au survol*/
-}
-.heart:hover .full {
-  display: inline;
-  /*Affiche le cœur plein au survol*/
-}
-
 /* Style de la section contact */
 #contact {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   background-color: #f8f4ef;
   padding: 40px;
   margin-top: 20px;
@@ -461,6 +542,7 @@ projet .card_titles .empty {
 
 /* Titre de la section contact */
 #contact h2 {
+  font-family: "Cormorant Garamond", sans-serif;
   text-align: center;
   color: #704C33;
   margin-bottom: 20px;
@@ -468,35 +550,42 @@ projet .card_titles .empty {
 
 /* Container pour diviser l'image et le formulaire */
 .contact-container {
-  display: flex; /* Utilisation de flexbox pour la disposition en 2 colonnes */
+  display: flex;
+  /* Utilisation de flexbox pour la disposition en 2 colonnes */
   justify-content: space-between;
-  align-items: flex-start; /* Alignement vertical du contenu */
+  align-items: flex-start;
+  /* Alignement vertical du contenu */
 }
 
 /* Style de l'image à gauche */
 .contact-image {
-  flex: 1; /* Prend une largeur égale à 50% */
-  max-width: 45%; /* Limite la largeur de l'image pour qu'elle ne prenne pas tout l'espace */
+  flex: 1;
+  /* Prend une largeur égale à 50% */
+  max-width: 45%;
+  /* Limite la largeur de l'image pour qu'elle ne prenne pas tout l'espace */
   margin-right: 20px;
 }
 
 .contact-image img {
-  width: 100%; /* L'image prend toute la largeur de son conteneur */
+  width: 100%;
+  /* L'image prend toute la largeur de son conteneur */
   height: 50%;
   border-radius: 8px;
 }
 
 /* Style du formulaire à droite */
 .contact-form {
-  flex: 1; /* Prend également 50% de l'espace */
-  max-width: 50%; /* Limite la largeur à 50% de la container */
+  flex: 1;
+  /* Prend également 50% de l'espace */
+  max-width: 50%;
+  /* Limite la largeur à 50% de la container */
 }
 
 /* Style des champs du formulaire */
 #contact label {
   display: block;
   margin-bottom: 5px;
-  font-family: Roboto, sans-serif;
+  font-family: "Cormorant Garamond", sans-serif;
   font-size: 16px;
   color: #704C33;
 }
@@ -525,6 +614,7 @@ projet .card_titles .empty {
   border-radius: 25px 0px 25px 0px;
   cursor: pointer;
   width: 100%;
+  font-family: "Cormorant Garamond", sans-serif;
   font-size: 16px;
   color: #704c33;
 }
@@ -539,56 +629,46 @@ projet .card_titles .empty {
 .footer_content {
   display: flex;
   flex-flow: column;
-  height: 250px;
+  height: 225px;
   gap: 16px;
   padding: 25px 22px 22px 25px;
   background: #704c33;
   justify-content: center;
 }
 
-/** .footer_logo {
-        width: 109px;
-        filter: invert(1);
-        color: #FFFFFF;
-      }**/
 .footer_links {
   display: flex;
-  /** flex-direction: row;**/
   align-items: center;
   gap: 20px;
   list-style: none;
   color: #f8f4ef;
 }
 
-/**.footer_links_bold {
-    display: flex;
-    justify-content: flex-start;
-    gap: 12px;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 18.75px;
-}**/
 .footer_links_simple {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 20px;
   text-align: left;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-/**.footer_links_bold .fa-solid {
-    width: 16px;
-    color: #f8f4ef;
-}**/
 a {
   color: #f8f4ef;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
 }
 
+/* Responsive - Ajuster la grille en fonction de la taille de l'écran */
+@media (max-width: 1024px) {
+  .projet_cards {
+    flex: 1 1 calc(50% - 20px); /* 2 cartes par ligne sur tablette */
+  }
+  .modal-content {
+    width: 70%; /* Augmente la largeur pour remplir plus l’écran */
+  }
+}
 @media (min-width: 768px) {
   .loading_container {
     top: 50%;
@@ -596,9 +676,19 @@ a {
     align-items: center;
     gap: 20px;
   }
+  .modal-content {
+    width: 80%;
+    padding: 15px; /* Réduire l’espace intérieur */
+  }
+  .modal-content figcaption {
+    font-size: 16px; /* Réduire la taille du texte */
+  }
   .titre_reserver {
     width: 100%;
     font-size: 40px;
+  }
+  .projet_cards {
+    flex: 1 1 calc(100% - 20px); /* 1 carte par ligne sur mobile */
   }
   .reservation p {
     width: 100%;
@@ -616,33 +706,12 @@ a {
     align-items: center;
     gap: 10px;
   }
-  /** .titre_projet {
-          width: 70%;
-      }**/
-  .projet {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
   .projet_cards {
-    /** width: 490px;
-     height: 250px;**/
-    margin: 20px;
-  }
-  .projet_cards img {
-    width: 490px;
-    /** opacity: 0px;**/
-  }
-  .card_content {
-    padding: 0px;
-    padding-left: 15px;
-  }
-  .card_titles {
-    margin-right: 5px;
+    margin: 10px 0; /* Espacement pour les petits écrans */
   }
   footer {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
   }
   .footer_links {
     display: flex;
@@ -652,5 +721,29 @@ a {
     color: #f8f4ef;
     list-style: none;
     gap: 15px;
+  }
+}
+@media (max-width: 430px) {
+  .projet_cards {
+    flex: 1 1 calc(100% - 20px); /* 1 carte par ligne sur mobile */
+  }
+  .modal-content {
+    width: 90%; /* Occupe presque tout l’écran */
+    padding: 10px;
+  }
+  .modal-content img {
+    max-width: 150px; /* Réduire l’image */
+  }
+  .modal-content figcaption {
+    font-size: 14px; /* Plus petit texte */
+  }
+}
+@media (max-width: 375px) {
+  .modal-content {
+    width: 95%;
+    padding: 8px;
+  }
+  .close-btn {
+    font-size: 20px; /* Rendre le bouton plus petit */
   }
 }/*# sourceMappingURL=style.css.map */

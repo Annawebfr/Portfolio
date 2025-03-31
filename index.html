@@ -11,6 +11,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap"
     rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="sass/style.css">
   <link rel="stylesheet" href="styles/main.css">
@@ -23,7 +26,6 @@
     <div class="loading_text">Welcome Bienvenue Välkommen </div> <!-- Texte ajouté ici -->
   </div>
 
-
   <div class="main_container">
     <!--Logo-->
     <header>
@@ -31,14 +33,82 @@
         <!-- <h1 class="fonction_titre">Anna Hultgren</h1>-->
         <img src="Images/images/projets/Anna.png" alt="Anna Hultgren Développeur Web">
       </div>
-
     </header>
     <main class="container">
 
       <div class="liens">
         <a href="javascript:void(0)" class="btn_liens" id="openAboutModal">About me</a>
         <a href="#projet" class="btn_liens">Portfolio</a>
-        <a class="btn_liens">Skills</a>
+
+        <!--ajoute de modal pour skills
+        <a class="btn_liens">Skills</a>-->
+
+        <!-- Bouton Skills -->
+        <a class="btn_liens" id="openModalSkills">Skills</a>
+
+        <!-- Modale Skills -->
+        <div class="modal" id="modalSkills">
+          <div class="modal-content">
+            <span class="close-btn" id="closeModalSkills">&times;</span>
+            <h2>Mes Compétences</h2>
+            <div class="skills-container">
+              <div class="skills-category">
+                <h2>Frontend</h2>
+                <p><i class="fab fa-html5"></i>HTML,<i class="fa-brands fa-css3-alt"></i>CSS<i
+                    class="fa-brands fa-sass"></i>SCSS,<i class="fa-brands fa-js"></i>JavaScript, <i
+                    class="fa-brands fa-react"></i>React, <i class="fab fa-html5"></i>Vite
+                </p>
+              </div>
+              <div class="skills-category">
+                <h2>More</h2>
+                <p><i class="fas fa-database"></i>MongoDB,<i class="fas fa-search"></i>SEO, <i
+                    class="fa-brands fa-figma"></i>Figma,<i class="fab fa-github"></i>GitHub,<i
+                    class="fab fa-html5"></i>Redux
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            // Sélection des éléments
+            const openModalSkills = document.getElementById("openModalSkills");
+            const modalSkills = document.getElementById("modalSkills");
+            const closeModalSkills = document.getElementById("closeModalSkills");
+
+            // Vérification si les éléments existent
+            if (!openModalSkills || !modalSkills || !closeModalSkills) {
+              console.error("Un des éléments de la modale Skills est introuvable !");
+              return;
+            }
+
+            console.log("Tout est bien chargé !");
+
+            // Ouvrir la modale
+            openModalSkills.addEventListener("click", () => {
+              modalSkills.style.display = "block";
+              console.log("Modale ouverte");
+            });
+
+            // Fermer la modale en cliquant sur (X)
+            closeModalSkills.addEventListener("click", () => {
+              modalSkills.style.display = "none";
+              console.log("Modale fermée (X)");
+            });
+
+            // Fermer la modale en cliquant en dehors du contenu
+            window.addEventListener("click", (e) => {
+              if (e.target === modalSkills) {
+                modalSkills.style.display = "none";
+                console.log("Modale fermée (clic extérieur)");
+              }
+            });
+          });
+        </script>
+
+
+
+
         <a href="#contact" class="btn_liens">Contact</a>
       </div>
       <!-- Fenêtre modale "About Me" -->
@@ -46,7 +116,8 @@
         <div class="modal-content">
           <span class="close-btn" id="closeModal">&times;</span>
           <figure>
-            Qui je suis?
+            <p> Qui je suis?</p>
+            <br>
             <img src="Images/images/projets/Anna.JPG" alt="Développeuse Web">
             <figcaption> Passionnée par le monde du web et en pleine reconversion professionnelle, je me lance dans le
               développement front-end (HTML, CSS, JavaScript) avec enthousiasme.
@@ -81,178 +152,164 @@
           }
         });
       </script>
-  <div>
+
+      <div>
         <h3 class="titre_projet">WELCOME TO MY PORTFOLIO</h3>
         <p>by Anna Hultgren</p>
       </div>
       <section class="fonction">
-    
       </section>
-    
-
-      <div class="fonction_btn">
-        <div class="fonction_content">
-          <p>Skills</p>
-        </div>
-      </div>
 
       <!--Projet-->
       <section id="projet" class="projet">
         <div class="projet_cards">
+          <article class="projet_card">
+            <a href="https://github.com/Annawebfr/site-Riding-Citites" class="card">
+              <img src="Images/images/projets/Riding-cities2.png" alt="Riding cities.">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Riding cities</h3>
+                <p class="subtitle_projet">HTML</p>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div class="projet_cards">
+          <article class="projet_card">
+            <a href="https://github.com/Annawebfr/P3-booki-starter-code-master" class="card">
+              <img src="Images/images/projets/Booki3.jpg" alt="Booki.">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Booki</h3>
+                <p class="subtitle_projet">HTML|CSS</p>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div class="projet_cards">
+          <a href="https://github.com/Annawebfr/P4-OhMyFood" class="card">
             <article class="projet_card">
-                <a href="https://github.com/Annawebfr/site-Riding-Citites" class="card">
-                    <img src="Images/images/projets/Riding-cities2.png" alt="Riding cities.">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Riding cities</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </a>
+              <img src="Images/images/projets/ohmyfood4.jpg"
+                alt="Une table comportant deux grandes assites de nourritures.">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Oh my food</h3>
+                <p class="subtitle_projet">HTML|CSS|SASS</p>
+              </div>
             </article>
+          </a>
         </div>
-    
         <div class="projet_cards">
+          <a href="https://github.com/Annawebfr/P5-Print-it-JS-main" class="card">
             <article class="projet_card">
-                <a href="https://github.com/Annawebfr/P3-booki-starter-code-master" class="card">
-                    <img src="Images/images/projets/Booki3.jpg" alt="Booki.">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Booki</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </a>
+              <img src="Images/images/projets/Print-it5.jpg" alt="Print it.">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Print it</h3>
+                <p class="subtitle_projet">JS</p>
+              </div>
             </article>
+          </a>
         </div>
-    
         <div class="projet_cards">
-            <a href="https://github.com/Annawebfr/P4-OhMyFood" class="card">
-                <article class="projet_card">
-                    <img src="Images/images/projets/ohmyfood4.jpg" alt="Une table comportant deux grandes assites de nourritures.">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Oh my food</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </article>
-            </a>
+          <a href="https://github.com/Annawebfr/P6-Site-Sophie-Bluel-Architecte-" class="card">
+            <article class="projet_card">
+              <img src="Images/images/projets/sophie-bluel-architechte6.png" alt="Sophie Bluel">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Sophie Bluel</h3>
+                <p class="subtitle_projet">HTML|CSS|JS</p>
+              </div>
+            </article>
+          </a>
         </div>
-    
         <div class="projet_cards">
-            <a href="https://github.com/Annawebfr/P5-Print-it-JS-main" class="card">
-                <article class="projet_card">
-                    <img src="Images/images/projets/Print-it5.jpg" alt="Print it.">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Print it</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </article>
-            </a>
+          <a href="https://github.com/Annawebfr/kasa" class="card">
+            <article class="projet_card">
+              <img src="Images/images/projets/Kasa7.png" alt="Kasa">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Kasa</h3>
+                <p class="subtitle_projet">HTML|CSS|REACT</p>
+              </div>
+            </article>
+          </a>
         </div>
-    
         <div class="projet_cards">
-            <a href="https://github.com/Annawebfr/P6-Site-Sophie-Bluel-Architecte-" class="card">
-                <article class="projet_card">
-                    <img src="Images/images/projets/sophie-bluel-architechte6.png" alt="Sophie Bluel">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Sophie Bluel</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </article>
-            </a>
+          <a href="https://github.com/Annawebfr/P8ninacarducci" class="card">
+            <article class="projet_card">
+              <img src="Images/images/projets/Nina-Carducchi-Photographe7.webp" alt="Nina Carducchi">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Photographe Nina Carducchi</h3>
+                <p class="subtitle_projet">SEO|Performance</p>
+              </div>
+            </article>
+          </a>
         </div>
-    
         <div class="projet_cards">
-            <a href="https://github.com/Annawebfr/kasa" class="card">
-                <article class="projet_card">
-                    <img src="Images/images/projets/Kasa7.png" alt="Kasa">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Kasa</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </article>
-            </a>
+          <a href="https://github.com/Annawebfr/Debuggez-une-application-React.JS-main" class="card">
+            <article class="projet_card">
+              <img src="Images/images/projets/Debuggez le site 9.png" alt="Event 724.">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Event 724</h3>
+                <p class="subtitle_projet">Tests</p>
+              </div>
+            </article>
+          </a>
         </div>
-    
         <div class="projet_cards">
-            <a href="https://github.com/Annawebfr/P8ninacarducci" class="card">
-                <article class="projet_card">
-                    <img src="Images/images/projets/Nina-Carducchi-Photographe7.webp" alt="Nina Carducchi">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Photographe Nina Carducchi</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </article>
-            </a>
+          <a href="" class="card">
+            <article class="projet_card">
+              <img src="Images/images/projets/ArgentBank10.jpeg" alt="Argent Bank.">
+              <div class="container_new">
+                <div class="new">
+                  <p>Site</p>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3 class="card_titles">Argent Bank</h3>
+                <div class="heart"></div>
+                <p class="subtitle_projet">HTML|CSS|REACT REDUX</p>
+              </div>
+            </article>
+          </a>
         </div>
-    
-        <div class="projet_cards">
-            <a href="https://github.com/Annawebfr/Debuggez-une-application-React.JS-main" class="card">
-                <article class="projet_card">
-                    <img src="Images/images/projets/Debuggez le site 9.png" alt="Event 724.">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Event 724</h3>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </article>
-            </a>
-        </div>
-    
-        <div class="projet_cards">
-            <a href="" class="card">
-                <article class="projet_card">
-                    <img src="Images/images/projets/ArgentBank10.jpeg" alt="Argent Bank.">
-                    <div class="container_new">
-                        <div class="new">
-                            <p>Site</p>
-                        </div>
-                    </div>
-                    <div class="card_content">
-                        <h3 class="card_titles">Argent Bank</h3>
-                        <div class="heart"></div>
-                        <p class="subtitle_projet">Code</p>
-                    </div>
-                </article>
-            </a>
-        </div>
-    </section>
-    
+      </section>
+
       <!-- SECTION CONTACT EN BAS DE PAGE -->
       <section id="contact">
         <h2>Me contacter</h2>
@@ -279,12 +336,7 @@
           </div>
         </div>
       </section>
-
-
-      <!-- Fin du contenu de la page -->
-
     </main>
-
 
     <!-- Footer -->
     <footer class="footer_content">
@@ -294,7 +346,7 @@
         </li>
         <li class="footer_links_simple">
           <i class="fa-brands fa-github"></i>
-          <a href="#"></a>
+          <a href="https://github.com/Annawebfr"></a>
         </li>
         <li class="footer_links_simple">
           <i class="fa-regular fa-envelope"></i>
@@ -305,7 +357,6 @@
         </li>
       </ul>
     </footer>
-
   </div>
 </body>
 
