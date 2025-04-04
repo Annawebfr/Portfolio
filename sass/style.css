@@ -143,10 +143,10 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 100px 0px 50px 0px;
-  gap: 20px;
+  gap: 100px;
   background-color: #F8f4ef;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .liens p {
@@ -395,11 +395,26 @@ p {
 .skills-category i {
   font-size: 20px;
   color: #704c33;
-  /* Marron pour matcher ton design */
   margin-right: 5px;
 }
 
 /** Projet **/
+.titre_projet {
+  text-align: center;
+  margin-top: 60px;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 25px;
+  color: #C9A56B;
+}
+
+.third-line {
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 16px;
+  /* Modifie uniquement cette ligne */
+  color: #C9A56B;
+  /* Optionnel : change aussi la couleur */
+}
+
 .projet {
   display: flex;
   flex-wrap: wrap;
@@ -453,17 +468,9 @@ p {
 .card_titles {
   font-family: "Cormorant Garamond", sans-serif;
   color: #704c33;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 5px;
-}
-
-.titre_projet {
-  text-align: center;
-  margin-top: 60px;
-  font-family: "Cormorant Garamond", sans-serif;
-  font-size: 25px;
-  color: #704C33;
 }
 
 .subtitle_projet {
@@ -522,7 +529,7 @@ a {
   padding: 5px 15px;
   color: #704C33;
   background-color: #dec9b6;
-  border-radius: 5%;
+  border-radius: 10px 0px 15px 0px;
   margin-left: 10px;
   margin-top: 5px;
   font-family: "Cormorant Garamond", sans-serif;
