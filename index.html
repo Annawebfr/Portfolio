@@ -22,7 +22,7 @@
 <body>
   <div class="loading">
     <div class="loading_container"></div>
-    <img src="Images/images/projets/Anna.png" alt="Loading" class="loading_image">
+    <img src="Images/images/projets/Développeuse web.webp" alt="Loading" class="loading_image">
     <div class="loading_text">Welcome Bienvenue Välkommen </div> <!-- Texte ajouté ici -->
   </div>
 
@@ -35,130 +35,102 @@
       </div>
     </header>
     <main class="container">
-
       <div class="liens">
         <a href="javascript:void(0)" class="btn_liens" id="openAboutModal">About me</a>
         <a href="#projet" class="btn_liens">Portfolio</a>
-
-        <!--ajoute de modal pour skills
-        <a class="btn_liens">Skills</a>-->
-        <!-- Bouton Skills -->
-        <a class="btn_liens" id="openModalSkills">Skills</a>
-
-        <!-- Modale Skills -->
-        <div class="modal" id="modalSkills">
-          <div class="modal-content">
-            <span class="close-btn" id="closeModalSkills">&times;</span>
-            <h2>Mes Compétences</h2>
-            <div class="skills-container">
-              <div class="skills-category">
-                <h2>Frontend</h2>
-                <p><i class="fab fa-html5"></i>HTML<i class="fa-brands fa-css3-alt"></i>CSS
-                  <i class="fa-brands fa-sass"></i>SCSS,<i class="fa-brands fa-js"></i>JavaScript, <i
-                    class="fa-brands fa-react"></i>React, <i class="fab fa-html5"></i>Vite
-                </p>
-              </div>
-              <div class="skills-category">
-                <h2>More</h2>
-                <p><i class="fas fa-database"></i>MongoDB,<i class="fas fa-search"></i>SEO, <i
-                    class="fa-brands fa-figma"></i>Figma,<i class="fab fa-github"></i>GitHub,<i
-                    class="fab fa-html5"></i>Redux
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script>
-          document.addEventListener("DOMContentLoaded", () => {
-            // Sélection des éléments
-            const openModalSkills = document.getElementById("openModalSkills");
-            const modalSkills = document.getElementById("modalSkills");
-            const closeModalSkills = document.getElementById("closeModalSkills");
-
-            // Vérification si les éléments existent
-            if (!openModalSkills || !modalSkills || !closeModalSkills) {
-              console.error("Un des éléments de la modale Skills est introuvable !");
-              return;
-            }
-
-            console.log("Tout est bien chargé !");
-
-            // Ouvrir la modale
-            openModalSkills.addEventListener("click", () => {
-              modalSkills.style.display = "block";
-              console.log("Modale ouverte");
-            });
-
-            // Fermer la modale en cliquant sur (X)
-            closeModalSkills.addEventListener("click", () => {
-              modalSkills.style.display = "none";
-              console.log("Modale fermée (X)");
-            });
-
-            // Fermer la modale en cliquant en dehors du contenu
-            window.addEventListener("click", (e) => {
-              if (e.target === modalSkills) {
-                modalSkills.style.display = "none";
-                console.log("Modale fermée (clic extérieur)");
-              }
-            });
-          });
-        </script>
-
+        <a href="javascript:void(0)" class="btn_liens" id="openModalSkills">Skills</a>
         <a href="#contact" class="btn_liens">Contact</a>
       </div>
-      <!-- Fenêtre modale "About Me" -->
-      <div class="modal" id="aboutModal">
-        <div class="modal-content">
-          <span class="close-btn" id="closeModal">&times;</span>
+      
+      <!-- Modale "About Me" -->
+      <div class="modal-aboutme" id="aboutModal">
+        <div class="modal-content-aboutme">      
+          <span class="close-btn" id="closeAboutModal">&times;</span>
           <figure>
-            <p> Qui je suis?</p>
-            <br>
+            <p>Qui je suis ?</p>
             <img src="Images/images/projets/Anna.JPG" alt="Développeuse Web">
-            <figcaption> Passionnée par le monde du web et en pleine reconversion professionnelle, je me lance dans le
-              développement front-end (HTML, CSS, JavaScript) avec enthousiasme.
-              Toujours motivée, curieuse et animée par l’envie d’apprendre, je souhaite rejoindre une équipe en
-              alternance pour mettre en pratique mes compétences.
-              Mon parcours m’a déjà permis de développer des savoir-faire en gestion de projets, création web et
-              communication visuelle.
-              Trilingue (français, anglais, suédois), j’apporte une ouverture culturelle et une vraie capacité
-              d’adaptation</figcaption>
+            <figcaption>Passionnée par le monde du web et en pleine reconversion professionnelle, je me lance dans le
+            développement front-end (HTML, CSS, JavaScript) avec enthousiasme.
+         Toujours motivée, curieuse et animée par l'envie d'apprendre, je souhaite rejoindre une équipe en
+           alternance pour mettre en pratique mes compétences.
+          Mon parcours m'a déjà permis de développer des savoir-faire en gestion de projets, création web et
+        communication visuelle.
+      Trilingue (français, anglais, suédois), j'apporte une ouverture culturelle et une vraie capacité
+           d'adaptation</figcaption>
           </figure>
         </div>
       </div>
 
-      <!-- Scripts -->
+<!-- Modale "Skills" -->
+<div class="modal-skills" id="modalSkills">
+  <div class="modal-content-skills">
+          <span class="close-btn" id="closeModalSkills">&times;</span>
+          <h2>Mes Compétences</h2>
+          <div class="skills-container">
+            <div class="skills-category">
+              <h3>Frontend</h3>
+              <p><i class="fab fa-html5"></i>HTML <i class="fa-brands fa-css3-alt"></i>CSS<i class="fa-brands fa-sass"></i>SCSS,<i class="fa-brands fa-js"></i>JavaScript, <i class="fa-brands fa-react"></i>React, <i class="fab fa-html5"></i>Vite</p>
+            </div>
+            <div class="skills-category">
+              <h3>More</h3>
+              <p><i class="fas fa-database"></i>MongoDB,<i class="fas fa-search"></i>SEO, <i
+                class="fa-brands fa-figma"></i>Figma,<i class="fab fa-github"></i>GitHub,<i
+              class="fab fa-html5"></i>Redux</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Script unique -->
       <script>
-        // Modal "About Me"
-        const openModalBtn = document.getElementById('openAboutModal');
-        const modal = document.getElementById('aboutModal');
-        const closeBtn = document.getElementById('closeModal');
-
-        openModalBtn.addEventListener('click', () => {
-          modal.style.display = 'block';
-        });
-
-        closeBtn.addEventListener('click', () => {
-          modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (e) => {
-          if (e.target === modal) {
-            modal.style.display = 'none';
-          }
+        document.addEventListener("DOMContentLoaded", () => {
+          // About Me
+          const openAbout = document.getElementById("openAboutModal");
+          const modalAbout = document.getElementById("aboutModal");
+          const closeAbout = document.getElementById("closeAboutModal");
+      
+          openAbout.addEventListener("click", () => {
+            modalAbout.style.display = "block";
+          });
+      
+          closeAbout.addEventListener("click", () => {
+            modalAbout.style.display = "none";
+          });
+      
+          // Skills
+          const openSkills = document.getElementById("openModalSkills");
+          const modalSkills = document.getElementById("modalSkills");
+          const closeSkills = document.getElementById("closeModalSkills");
+      
+          openSkills.addEventListener("click", () => {
+            modalSkills.style.display = "block";
+          });
+      
+          closeSkills.addEventListener("click", () => {
+            modalSkills.style.display = "none";
+          });
+      
+          // Fermer en cliquant à l’extérieur
+          window.addEventListener("click", (e) => {
+            if (e.target === modalAbout) {
+              modalAbout.style.display = "none";
+            }
+            if (e.target === modalSkills) {
+              modalSkills.style.display = "none";
+            }
+          });
         });
       </script>
-
-      <div>
+<div>
         <h3 class="titre_projet">WELCOME TO MY PORTFOLIO</h3>
-        <p classe="second-line">by Anna Hultgren</p>
-        <p class="third-line">Je me réjouis à l'idée de mettre en pratique mes compétences acquises sur des projets
-          passionnants, tout en
-          continuant à apprendre et à évoluer dans ce domaine dynamique et stimulant.</p>
-      </div>
+        <p class="second_line">by Anna Hultgren</p>
+        <p class="third_line">Je me réjouis à l'idée de mettre en pratique mes compétences acquises sur des projets
+        passionnants, tout en continuant à apprendre et à évoluer dans ce domaine dynamique et stimulant.</p>
+       </div>
+
       <section class="fonction">
       </section>
-
+      
       <!--Projet-->
       <section id="projet" class="projet">
         <div class="projet_cards">
@@ -188,7 +160,7 @@
               </div>
               <div class="card_content">
                 <h3 class="card_titles">Booki</h3>
-                <p class="subtitle_projet">HTML|CSS</p>
+                <p class="subtitle_projet">HTML | CSS</p>
               </div>
             </a>
           </article>
@@ -205,7 +177,7 @@
               </div>
               <div class="card_content">
                 <h3 class="card_titles">Oh my food</h3>
-                <p class="subtitle_projet">HTML|CSS|SASS</p>
+                <p class="subtitle_projet">HTML | CSS | SASS</p>
               </div>
             </article>
           </a>
@@ -237,7 +209,7 @@
               </div>
               <div class="card_content">
                 <h3 class="card_titles">Sophie Bluel</h3>
-                <p class="subtitle_projet">HTML|CSS|JS</p>
+                <p class="subtitle_projet">HTML | CSS | JS</p>
               </div>
             </article>
           </a>
@@ -253,7 +225,7 @@
               </div>
               <div class="card_content">
                 <h3 class="card_titles">Kasa</h3>
-                <p class="subtitle_projet">HTML|CSS|REACT</p>
+                <p class="subtitle_projet">HTML | CSS | REACT</p>
               </div>
             </article>
           </a>
@@ -269,7 +241,7 @@
               </div>
               <div class="card_content">
                 <h3 class="card_titles">Photographe Nina Carducchi</h3>
-                <p class="subtitle_projet">SEO|Performance</p>
+                <p class="subtitle_projet">SEO | Performance</p>
               </div>
             </article>
           </a>
@@ -301,17 +273,12 @@
               </div>
               <div class="card_content">
                 <h3 class="card_titles">Argent Bank </h3>
-                <div class="heart"></div>
-                <p class="subtitle_projet">HTML|CSS|REACT REDUX</p>
+                <p class="subtitle_projet">HTML | CSS | REACT | REDUX</p>
               </div>
             </article>
           </a>
         </div>
       </section>
-
-      
-
-
 
       <!-- SECTION CONTACT EN BAS DE PAGE -->
       <section id="contact">
@@ -362,5 +329,4 @@
     </footer>
   </div>
 </body>
-
 </html>

@@ -35,13 +35,15 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
 }
 
 .loading_image {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
+    border-radius: 50%; /* pour un effet rond */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes rotation {
@@ -52,6 +54,7 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
     100% {
         transform: rotate(360deg);
     }**/
+
     from {
         transform: rotate(0deg);
     }
@@ -92,9 +95,9 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
 
 /* Style du texte */
 .loading_text {
-    font-size: 30px;
+    font-size: 70px;
     font-family: "Cormorant Garamond";
-    color: #d45b04;
+    color: #03854b;
     margin-top: -30px;
     animation: fadeIn 1s forwards;
 }
@@ -250,8 +253,9 @@ a {
     }
 }
 
+
 /* === MODALE "ABOUT ME" === */
-.modal {
+.modal-aboutme {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -261,10 +265,9 @@ a {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
-    /* Permet de scroller si besoin */
 }
 
-.modal-content {
+.modal-content-aboutme {
     background-color: #f8f8f8;
     width: 50%;
     padding: 20px;
@@ -284,19 +287,17 @@ a {
     /* Active le scroll si le contenu est trop long */
 }
 
-.modal-content img {
-    max-width: 200px;
-    /* ou 50%, selon ce que je préfère */
+.modal-content-aboutme img {
+    max-width: 150px;
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 50%; /* pour un effet rond */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.modal-content figcaption {
+  }
+  
+.modal-content-aboutme  figcaption {
     font-size: 18px;
     font-family: "Cormorant Garamond", sans-serif;
     line-height: 1.6;
@@ -305,6 +306,10 @@ a {
     color: #704C33;
     text-align: justify;
 }
+.modal-aboutme,
+.modal-skills {
+  z-index: 9999;
+}
 
 .close-btn {
     position: absolute;
@@ -312,13 +317,13 @@ a {
     right: 15px;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #DEC9B6;
     cursor: pointer;
 }
 
 
 /* === MODALE SKILLS === */
-.modal {
+.modal-skills {
     display: none;
     /* Cachée par défaut */
     position: fixed;
@@ -330,7 +335,7 @@ a {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content {
+.modal-content-skills {
     background-color: #F8f4ef;
     width: 70%;
     max-width: 600px;
@@ -364,9 +369,7 @@ h2 {
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     font-size: 24px;
-    /* Taille des icônes un peu plus grande */
     color: #704c33;
-    /* Couleur marron pour matcher ton design */
     margin-right: 5px;
 }
 
@@ -386,7 +389,7 @@ p {
     right: 15px;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #704c33;
     cursor: pointer;
 }
 
@@ -401,13 +404,11 @@ p {
     color: #704c33;
 }
 
-
 .skills-category i {
     font-size: 20px;
     color: #704c33;
     margin-right: 5px;
 }
-
 
 
 /** Projet **/
@@ -419,19 +420,24 @@ p {
     color: #C9A56B;
 }
 
-.third-line {
+/**.card,
+.projet_card {
+  position: relative;
+  z-index: 1;
+}**/
+
+.third_line {
     font-family: "Cormorant Garamond", sans-serif;
     font-size: 16px;
     /* Modifie uniquement cette ligne */
     color: #C9A56B;
+    text-align: center;
 }
-
-
-.second-line {
+.second_line {
     font-family: "Cormorant Garamond", sans-serif;
     font-size: 14px;
-    /* Modifie uniquement cette ligne */
     color: #C9A56B;
+    text-align: center;
 }
 
 .projet {
@@ -452,34 +458,36 @@ p {
 }
 
 .projet_cards {
-    display: flex;
+   /** display: flex;**/
     flex-wrap: wrap;
     width: calc(33.33% - 40px);
     max-width: 340px;
     background-color: #ffffff;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
+   /** border-radius: 15px;**/
+   padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: relative;
     margin: 20px 0;
 }
 
 .projet_cards img {
-    width: 490px;
-    height: 190px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
+    display: block;
     /* Adapter l'image sans la déformer */
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    top: -57px;
+    /**border-top-left-radius: 15px;
+    border-top-right-radius: 15px;**/
+    /**top: -57px;
     left: -3px;
     gap: 0px;
-    opacity: 0px;
+    opacity: 0px;**/
 }
 
 .card_content {
     position: relative;
-    padding: 16px;
+    /**padding: 16px;**/
     color: #704c33;
 }
 
@@ -568,6 +576,7 @@ a {
     right: 5%;
 }
 
+  
 
 /* Style de la section contact */
 #contact {
@@ -716,6 +725,10 @@ a {
         width: 70%;
         /* Augmente la largeur pour remplir plus l’écran */
     }
+    .footer_links {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 768px) {
@@ -726,23 +739,20 @@ a {
         align-items: center;
         gap: 20px;
     }
-
+  
     .modal-content {
         width: 80%;
         padding: 15px;
         /* Réduire l’espace intérieur */
     }
-
     .modal-content figcaption {
         font-size: 16px;
         /* Réduire la taille du texte */
     }
-
     .titre_reserver {
         width: 100%;
         font-size: 40px;
     }
-
 
     .projet_cards {
         flex: 1 1 calc(100% - 20px);
@@ -790,12 +800,17 @@ a {
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
+     
     .projet_cards {
         flex: 1 1 calc(100% - 20px);
         /* 1 carte par ligne sur mobile */
+        .footer_links {
+            display: flex;
+            flex-direction: column;
+        }
     }
-
+   
     .modal-content {
         width: 90%;
         /* Occupe presque tout l’écran */
@@ -818,7 +833,11 @@ a {
         width: 95%;
         padding: 8px;
     }
-
+    .liens {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+    }
     .close-btn {
         font-size: 20px;
         /* Rendre le bouton plus petit */
