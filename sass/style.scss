@@ -4,13 +4,42 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 $primary-color: #704C33; // Couleur principale
 $secondary-color: #F8f4ef; // Couleur secondaire
 $tertiary-color: #DEC9B6; // Couleur d'accent
 
+/**arrow up**/
+.container_back {
+    position: fixed;
+    bottom: 30px;
+    /* distance du bas */
+    right: 30px;
+    /* distance de la droite */
+    background-color: #DEC9B6;
+    padding: 5px;
+    border-radius: 50%;
+    z-index: 1000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container_back i {
+    color: #f8f4ef;
+    font-size: 15px;
+}
+
+.container_back:hover {
+    background: linear-gradient(#dec9b6, #f8f4ef);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/**loader**/
 .loading {
     background-color: #f8f4ef;
-    /* Couleur plus douce */
     width: 100vw;
     height: 100vh;
     z-index: 5;
@@ -21,28 +50,29 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
     animation: fadeOut 5s forwards;
     flex-direction: column;
     text-align: center;
+    position: absolute;
 }
 
 .loading_container {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 8px solid transparent;
-    border-top: 8px solid #704C33;
-    position: absolute;
-    animation: rotation 3s ease-in-out infinite, colorChange 4s ease-in-out infinite;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-top: 8px solid #704c33;
+    animation: rotation 3s ease-in-out infinite, colorChange 3s ease-in-out infinite;
+    box-shadow: 0 2px 10px rgba(139, 3, 3, 0.2);
 }
 
 .loading_image {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 5;
-    border-radius: 50%; /* pour un effet rond */
+    z-index: 2;
+    border-radius: 50%;
+    /* pour un effet rond */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -268,7 +298,7 @@ a {
 }
 
 .modal-content-aboutme {
-    background-color: #f8f8f8;
+    background-color: #f8f4ef;
     width: 50%;
     padding: 20px;
     border-radius: 10px;
@@ -291,13 +321,14 @@ a {
     max-width: 150px;
     width: 100%;
     height: auto;
-    border-radius: 50%; /* pour un effet rond */
+    border-radius: 50%;
+    /* pour un effet rond */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
     display: block;
-  }
-  
-.modal-content-aboutme  figcaption {
+}
+
+.modal-content-aboutme figcaption {
     font-size: 18px;
     font-family: "Cormorant Garamond", sans-serif;
     line-height: 1.6;
@@ -306,9 +337,10 @@ a {
     color: #704C33;
     text-align: justify;
 }
+
 .modal-aboutme,
 .modal-skills {
-  z-index: 9999;
+    z-index: 9999;
 }
 
 .close-btn {
@@ -416,27 +448,22 @@ p {
     text-align: center;
     margin-top: 60px;
     font-family: "Cormorant Garamond", sans-serif;
-    font-size: 25px;
-    color: #C9A56B;
+    font-size: 16px;
+    color: #1F2A44;
 }
-
-/**.card,
-.projet_card {
-  position: relative;
-  z-index: 1;
-}**/
 
 .third_line {
     font-family: "Cormorant Garamond", sans-serif;
     font-size: 16px;
     /* Modifie uniquement cette ligne */
-    color: #C9A56B;
+    color: #1F2A44;
     text-align: center;
 }
+
 .second_line {
     font-family: "Cormorant Garamond", sans-serif;
     font-size: 14px;
-    color: #C9A56B;
+    color: #1F2A44;
     text-align: center;
 }
 
@@ -454,18 +481,19 @@ p {
     margin-top: -4%;
     /**padding-left: 20px;
     padding-right: 20px;**/
-    box-shadow: 0px 6px 10px 0px rgba(0, 0, 38, 0.15);
+    /**box-shadow: 0px 6px 10px 0px rgba(0, 0, 38, 0.15);**/
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 38, 0.15);
 }
 
 .projet_cards {
-   /** display: flex;**/
+    /** display: flex;**/
     flex-wrap: wrap;
     width: calc(33.33% - 40px);
     max-width: 340px;
     background-color: #ffffff;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-   /** border-radius: 15px;**/
-   padding: 5px 5px 5px 5px;
+    /** border-radius: 15px;**/
+    padding: 5px 5px 5px 5px;
     overflow: hidden;
     position: relative;
     margin: 20px 0;
@@ -528,7 +556,7 @@ a {
 }
 
 /* Section coeur (empty et full) */
-.projet .card_titles .empty {
+/**.projet .card_titles .empty {
     position: absolute;
     top: 83%;
     right: 10%;
@@ -545,7 +573,7 @@ a {
     font-size: 25px;
     cursor: pointer;
     opacity: 0;
-}
+}**/
 
 /* Conteneur du bouton "Site" */
 .projet .card .container_new p {
@@ -576,6 +604,90 @@ a {
     right: 5%;
 }
 
+
+/** SECTION SKILLS **/
+.skills {
+    background-color: #1F2A44;
+    padding: 2.5rem 1rem; // réduit pour éviter trop de hauteur
+    color: #f8f4ef;
+    font-family: "Cormorant Garamond", serif;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .skills__main-title {
+        text-align: center; // Centre le titre
+        color: #f8f4ef; // Applique la couleur claire
+        font-size: 2.5rem; // Ajuste la taille du titre selon ton choix
+        margin-bottom: 2rem; // Ajoute un espacement sous le titre
+      }
+
+    .skills__title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #DEC9B6;
+    }
+  
+    .skills__category {
+      margin-bottom: 2rem;
+  
+      h3 {
+        font-size: 1.8rem;
+        color: #DEC9B6;
+        margin: 1rem 0;
+        text-align: center;
+      }
+    }
+  
+    .skills__category-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #DEC9B6;
+      text-align: center;
+    }
+  
+    .skills__cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center; // centré sur tous les écrans
+    }
+  
+    .skills_card {
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      width: 160px;
+      height: 120px;;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+  
+      .skills_titles {
+        font-size: 1.2rem;
+        color: #1F2A44;
+        margin-top: 0.5rem;
+      }
+  
+      .skills_subtitle {
+        font-size: 1rem;
+        color: #704C33;
+      }
+  
+      .new p {
+        background-color: #DEC9B6;
+        color: #1F2A44;
+        padding: 0.4rem;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
   
 
 /* Style de la section contact */
@@ -725,10 +837,14 @@ a {
         width: 70%;
         /* Augmente la largeur pour remplir plus l’écran */
     }
+
     .footer_links {
         display: flex;
         flex-direction: column;
     }
+    .skills__cards {
+        justify-content: center;
+      }
 }
 
 @media (min-width: 768px) {
@@ -739,16 +855,18 @@ a {
         align-items: center;
         gap: 20px;
     }
-  
+
     .modal-content {
         width: 80%;
         padding: 15px;
         /* Réduire l’espace intérieur */
     }
+
     .modal-content figcaption {
         font-size: 16px;
         /* Réduire la taille du texte */
     }
+
     .titre_reserver {
         width: 100%;
         font-size: 40px;
@@ -798,19 +916,23 @@ a {
         list-style: none;
         gap: 15px;
     }
+    .skills__cards {
+        justify-content: center;
+      }
 }
 
 @media (max-width: 480px) {
-     
+
     .projet_cards {
         flex: 1 1 calc(100% - 20px);
+
         /* 1 carte par ligne sur mobile */
         .footer_links {
             display: flex;
             flex-direction: column;
         }
     }
-   
+
     .modal-content {
         width: 90%;
         /* Occupe presque tout l’écran */
@@ -826,6 +948,9 @@ a {
         font-size: 14px;
         /* Plus petit texte */
     }
+    .skills__cards {
+        justify-content: center;
+      }
 }
 
 @media (max-width: 375px) {
@@ -833,13 +958,18 @@ a {
         width: 95%;
         padding: 8px;
     }
+
     .liens {
         display: flex;
         flex-direction: column;
         height: 300px;
     }
+
     .close-btn {
         font-size: 20px;
         /* Rendre le bouton plus petit */
     }
+    .skills__cards {
+        justify-content: center;
+      }
 }

@@ -20,6 +20,10 @@
 </head>
 
 <body>
+  <div id="top"></div>
+  <div class="container_back">
+    <a href="#top"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
   <div class="loading">
     <div class="loading_container"></div>
     <img src="Images/images/projets/Développeuse web.webp" alt="Loading" class="loading_image">
@@ -41,46 +45,49 @@
         <a href="javascript:void(0)" class="btn_liens" id="openModalSkills">Skills</a>
         <a href="#contact" class="btn_liens">Contact</a>
       </div>
-      
+
       <!-- Modale "About Me" -->
       <div class="modal-aboutme" id="aboutModal">
-        <div class="modal-content-aboutme">      
+        <div class="modal-content-aboutme">
           <span class="close-btn" id="closeAboutModal">&times;</span>
           <figure>
             <p>Qui je suis ?</p>
             <img src="Images/images/projets/Anna.JPG" alt="Développeuse Web">
             <figcaption>Passionnée par le monde du web et en pleine reconversion professionnelle, je me lance dans le
-            développement front-end (HTML, CSS, JavaScript) avec enthousiasme.
-         Toujours motivée, curieuse et animée par l'envie d'apprendre, je souhaite rejoindre une équipe en
-           alternance pour mettre en pratique mes compétences.
-          Mon parcours m'a déjà permis de développer des savoir-faire en gestion de projets, création web et
-        communication visuelle.
-      Trilingue (français, anglais, suédois), j'apporte une ouverture culturelle et une vraie capacité
-           d'adaptation</figcaption>
+              développement front-end (HTML, CSS, JavaScript) avec enthousiasme.
+              Toujours motivée, curieuse et animée par l'envie d'apprendre, je souhaite rejoindre une équipe en
+              alternance pour mettre en pratique mes compétences.
+              Mon parcours m'a déjà permis de développer des savoir-faire en gestion de projets, création web et
+              communication visuelle.
+              Trilingue (français, anglais, suédois), j'apporte une ouverture culturelle et une vraie capacité
+              d'adaptation</figcaption>
           </figure>
         </div>
       </div>
 
-<!-- Modale "Skills" -->
-<div class="modal-skills" id="modalSkills">
-  <div class="modal-content-skills">
+      <!-- Modale "Skills" -->
+      <div class="modal-skills" id="modalSkills">
+        <div class="modal-content-skills">
           <span class="close-btn" id="closeModalSkills">&times;</span>
           <h2>Mes Compétences</h2>
           <div class="skills-container">
             <div class="skills-category">
               <h3>Frontend</h3>
-              <p><i class="fab fa-html5"></i>HTML <i class="fa-brands fa-css3-alt"></i>CSS<i class="fa-brands fa-sass"></i>SCSS,<i class="fa-brands fa-js"></i>JavaScript, <i class="fa-brands fa-react"></i>React, <i class="fab fa-html5"></i>Vite</p>
+              <p><i class="fab fa-html5"></i>HTML <i class="fa-brands fa-css3-alt"></i>CSS
+                <i class="fa-brands fa-sass"></i>SCSS,<i class="fa-brands fa-js"></i>JavaScript, <i
+                  class="fa-brands fa-react"></i>React, <i class="fab fa-html5"></i>Vite
+              </p>
             </div>
             <div class="skills-category">
               <h3>More</h3>
               <p><i class="fas fa-database"></i>MongoDB,<i class="fas fa-search"></i>SEO, <i
-                class="fa-brands fa-figma"></i>Figma,<i class="fab fa-github"></i>GitHub,<i
-              class="fab fa-html5"></i>Redux</p>
+                  class="fa-brands fa-figma"></i>Figma,<i class="fab fa-github"></i>GitHub,<i
+                  class="fab fa-html5"></i>Redux</p>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Script unique -->
       <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -88,28 +95,28 @@
           const openAbout = document.getElementById("openAboutModal");
           const modalAbout = document.getElementById("aboutModal");
           const closeAbout = document.getElementById("closeAboutModal");
-      
+
           openAbout.addEventListener("click", () => {
             modalAbout.style.display = "block";
           });
-      
+
           closeAbout.addEventListener("click", () => {
             modalAbout.style.display = "none";
           });
-      
+
           // Skills
           const openSkills = document.getElementById("openModalSkills");
           const modalSkills = document.getElementById("modalSkills");
           const closeSkills = document.getElementById("closeModalSkills");
-      
+
           openSkills.addEventListener("click", () => {
             modalSkills.style.display = "block";
           });
-      
+
           closeSkills.addEventListener("click", () => {
             modalSkills.style.display = "none";
           });
-      
+
           // Fermer en cliquant à l’extérieur
           window.addEventListener("click", (e) => {
             if (e.target === modalAbout) {
@@ -121,17 +128,17 @@
           });
         });
       </script>
-<div>
+      <div>
         <h3 class="titre_projet">WELCOME TO MY PORTFOLIO</h3>
         <p class="second_line">by Anna Hultgren</p>
         <p class="third_line">Je me réjouis à l'idée de mettre en pratique mes compétences acquises sur des projets
-        passionnants, tout en continuant à apprendre et à évoluer dans ce domaine dynamique et stimulant.</p>
-       </div>
+          passionnants, tout en continuant à apprendre et à évoluer dans ce domaine dynamique et stimulant.</p>
+      </div>
 
       <section class="fonction">
       </section>
-      
-      <!--Projet-->
+
+      <!--PROJET-->
       <section id="projet" class="projet">
         <div class="projet_cards">
           <article class="projet_card">
@@ -263,7 +270,7 @@
           </a>
         </div>
         <div class="projet_cards">
-          <a href="" class="card">
+          <a href="https://github.com/Annawebfr/ArgentBank" class="card">
             <article class="projet_card">
               <img src="Images/images/projets/ArgentBank10.jpeg" alt="Argent Bank.">
               <div class="container_new">
@@ -280,6 +287,194 @@
         </div>
       </section>
 
+      <!-- SECTION SKILLS -->
+      <section id="skills" class="skills">
+        <h2 class="skills__main-title">Mes compétences</h2>
+
+        <!-- FRONTEND -->
+        <div class="skills__category">
+          <h3 class="skills__category-title">Frontend</h3>
+          <div class="skills__cards">
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fab fa-html5"></i> HTML</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">HTML</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fa-brands fa-css3-alt"></i> CSS</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">CSS</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fa-brands fa-sass"></i> SASS/SCSS</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">SASS/SCSS</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fa-brands fa-js"></i> JAVASCRIPT</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">JavaScript</h3>
+                  <p class="skills_subtitle">HTML</p>
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fa-brands fa-react"></i> REACT</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">React</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fab fa-html5"></i> VITE</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">Vite</h3>
+
+                </div>
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- MORE -->
+        <div class="skills__category">
+          <h3 class="skills__category-title">More</h3>
+          <div class="skills__cards">
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fas fa-database"></i> MONGODB</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">MongoDB</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fas fa-search"></i> SEO</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">SEO</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fa-brands fa-figma"></i> FIGMA</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">Figma</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fab fa-github"></i> GITHUB</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">GitHub</h3>
+
+                </div>
+              </a>
+            </article>
+
+            <article class="skills_card">
+              <a href="#" class="cardskills">
+                <div class="container_new">
+                  <div class="new">
+                    <p><i class="fab fa-html5"></i> REDUX</p>
+                    <p>Skills</p>
+                  </div>
+                </div>
+                <div class="skills_content">
+                  <h3 class="skills_titles">Redux</h3>
+
+                </div>
+              </a>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+
+
       <!-- SECTION CONTACT EN BAS DE PAGE -->
       <section id="contact">
         <h2>Me contacter</h2>
@@ -288,9 +483,9 @@
           <div class="contact-image">
             <img src="Images/images/projets/contact.jpg" alt="Image de Contact">
           </div>
-
           <!-- Formulaire à droite -->
           <div class="contact-form">
+
             <form id="contactForm">
               <label for="name">Nom :</label>
               <input type="text" id="name" name="name" required>
@@ -305,6 +500,7 @@
             </form>
           </div>
         </div>
+
       </section>
     </main>
 
@@ -329,4 +525,5 @@
     </footer>
   </div>
 </body>
+
 </html>
