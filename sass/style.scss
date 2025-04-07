@@ -35,7 +35,8 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/**loader**/
+
+/**SECTION LOADER**/
 .loading {
     background-color: #f8f4ef;
     width: 100vw;
@@ -45,103 +46,99 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 5s forwards;
     flex-direction: column;
     text-align: center;
-}
-
-.loading_container {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 8px solid transparent;
-    border-top: 8px solid #704c33;
-    animation: rotation 3s ease-in-out infinite, colorChange 3s ease-in-out infinite;
-    box-shadow: 0 2px 10px rgba(139, 3, 3, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute; /* Important pour la rotation */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the circle */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loading_image {
-    width: 130px;
-    height: 130px;
-    position: absolute; /* Positionner l'image absolument dans le cercle */
-    top: 50%;  /* Centrer l'image */
-    left: 50%; /* Centrer l'image */
-    transform: translate(-50%, -50%); /* Pour recentrer parfaitement l'image */
-    z-index: 2;
-    border-radius: 50%;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    padding: 5px;  /* Espacement intérieur de l'image */
-}
-
-@keyframes rotation {
+    animation: fadeOut 7s forwards;
+  
+    .loading_circle {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 25px;
+  
+      .loading_container {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top: 8px solid #704c33;
+        animation: rotation 3s ease-in-out infinite, colorChange 3s ease-in-out infinite;
+        box-shadow: 0 2px 10px rgba(139, 3, 3, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .loading_image {
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        border-radius: 50%;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 8px;
+      }
+    }
+  
+    .loading_text {
+      margin-top: 0;
+      font-size: 50px;
+      font-family: "Cormorant Garamond";
+      color: #704c33;
+      background: linear-gradient(45deg, #f8f4ef, #DEC9B6);
+      animation: fadeIn 1s forwards;
+      border-radius: 55px 0px 55px 0px;
+      padding: 10px 20px;
+    }
+  }
+  
+  /* Animations */
+  @keyframes rotation {
     from {
-        transform: rotate(0deg);
+      transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+      transform: rotate(360deg);
     }
-}
-
-@keyframes colorChange {
+  }
+  
+  @keyframes colorChange {
     0% {
-        border-top-color: #F8f4ef;
+      border-top-color: #f8f4ef;
     }
-
     50% {
-        border-top-color: #704C33;
+      border-top-color: #704c33;
     }
-
     100% {
-        border-top-color: #dec9b6;
+      border-top-color: #dec9b6;
     }
-}
-
-/* Animation de fade */
-@keyframes fadeOut {
+  }
+  
+  @keyframes fadeOut {
     0% {
-        opacity: 1;
+      opacity: 1;
     }
-
     100% {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
-}
-
-/* Style du texte */
-.loading_text {
-    margin-top: 70px;  /* Espacement entre le texte et le cercle */
-    font-size: 50px;
-    font-family: "Cormorant Garamond";
-    color: #a20613;
-    background-color: #F8f4ef;
-    background: linear-gradient(45deg, #f8f4ef, #ff9a8b); /* Dégradé */  
-    animation: fadeIn 1s forwards;
-    border-radius: 55px 0px 55px 0px;
-    padding: 10px 20px; /* Ajouter du padding pour espacer le texte du fond */
-}
-
-/* Animation d’apparition du texte */
-@keyframes fadeIn {
+  }
+  
+  @keyframes fadeIn {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
-
     100% {
-        opacity: 1;
+      opacity: 1;
     }
-}
+  }
+  
+
+/** section main container**/
 
 .main_container {
     z-index: 1;
@@ -335,7 +332,7 @@ a {
     text-decoration: underline;
   }
   .aboutme-button {
-  font-size: 15px;
+  font-size: 12px;
   color: #ffffff;
   background-color: #04067c;
   border: none;
@@ -364,10 +361,8 @@ a {
     border-radius: 10px;
     text-align: center;
     position: relative;
-    top: 50%;
-    /* Centre verticalement */
-    left: 50%;
-    /* Centre horizontalement */
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
     transform: translate(-50%, -50%);
     /* Ajustement parfait */
     /* Nouvelle règle pour éviter le dépassement */
@@ -597,12 +592,6 @@ p {
     color: #704c33;
 }
 
-/**p {
-    font-family: "Cormorant Garamond", ;
-    text-align: center;
-    font-size: 20px;
-    color: #704C33;
-}**/
 
 a {
     color: #704c33;
@@ -647,47 +636,76 @@ a {
     right: 5%;
 }
 
-/* Style pour la fenêtre modale projets card*/
+/* === Modal Styles section projet=== */
 .modal {
-    display: none; /* Cache la modale par défaut */
+    display: none; // Cacher la modal par défaut
     position: fixed;
-    z-index: 1;
-    left: 0;
+    z-index: 1000; // Valeur plus haute pour éviter les conflits
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0); /* Fond sombre */
-    background-color: rgba(0,0,0,0.4); /* Avec opacité */
-    padding-top: 60px;
-    text-align: center;
+    overflow-y: auto; // Permet le scroll vertical uniquement
+    background-color: rgba(0, 0, 0, 0.5); // Fond légèrement plus foncé
+    transition: opacity 0.3s ease;
   }
   
+  /* === Contenu de la modal === */
   .modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
+    background-color: #F8f4ef;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 38, 0.15);
     width: 80%;
     max-width: 600px;
+    position: relative;
   }
   
-  .close-btn {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+  /* === Bouton de fermeture === */
+  .close {
     position: absolute;
-    top: 10px;
-    right: 25px;
-    font-family: "Cormorant Garamond", sans-serif;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  
+    &:hover,
+    &:focus {
+      color: #000;
+      outline: none;
+    }
   }
   
-  .close-btn:hover,
-  .close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  /* === Bouton 'New' style === */
+  .new {
+    p {
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  
+    a {
+      text-decoration: none;
+    }
   }
+  
+
   
 
 
@@ -781,11 +799,10 @@ a {
     margin-right: 10%;
     background-color: #f8f4ef;
     padding: 40px;
-    margin-top: 20px;
+    margin-top: 2%;
     border-radius: 10px;
-    /** box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);**/
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 38, 0.15);
-    margin-bottom: 20px;
+    margin-bottom: 2%;
 }
 
 /* Titre de la section contact */
