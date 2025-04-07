@@ -35,13 +35,14 @@
     <header>
       <div class="logo">
         <!-- <h1 class="fonction_titre">Anna Hultgren</h1>-->
-        <img src="Images/images/projets/Anna.png" alt="Anna Hultgren Développeur Web">
+        <img src="Images/images/projets/Annableu.png" alt="Anna Hultgren Développeur Web">
       </div>
     </header>
     <main class="container">
       <div class="liens">
         <a href="javascript:void(0)" class="btn_liens" id="openAboutModal">About me</a>
         <a href="#projet" class="btn_liens">Portfolio</a>
+        <a href="#skills" class="btn_liens">Compétences</a>
         <a href="javascript:void(0)" class="btn_liens" id="openModalSkills">Skills</a>
         <a href="#contact" class="btn_liens">Contact</a>
       </div>
@@ -64,7 +65,6 @@
               (français, anglais, suédois), j'apporte également une grande ouverture culturelle et une adaptabilité qui
               sont des atouts précieux dans un environnement international ou collaboratif. </figcaption>
             <button class="aboutme-button" id="goToSkills">Mes compétences</button>
-
           </figure>
         </div>
       </div>
@@ -74,6 +74,8 @@
         <div class="modal-content-skills">
           <span class="close-btn" id="closeModalSkills">&times;</span>
           <h2>Mes Compétences</h2>
+          <p class="third_line">Je me réjouis à l'idée de mettre en pratique mes compétences acquises sur des projets
+            passionnants, tout en continuant à apprendre et à évoluer dans ce domaine dynamique et stimulant.</p>
           <div class="skills-container">
             <div class="skills-category">
               <h3>Frontend</h3>
@@ -92,7 +94,8 @@
         </div>
       </div>
 
-      <script>
+
+<script>
       document.addEventListener("DOMContentLoaded", () => {
   // About Me Modal
   const openAbout = document.getElementById("openAboutModal");
@@ -156,16 +159,12 @@
     }
   });
 });
-
-
       </script>
-      
 
-      <div>
+      <div class="welcome">
         <h3 class="titre_projet">WELCOME TO MY PORTFOLIO</h3>
         <p class="second_line">by Anna Hultgren</p>
-        <p class="third_line">Je me réjouis à l'idée de mettre en pratique mes compétences acquises sur des projets
-          passionnants, tout en continuant à apprendre et à évoluer dans ce domaine dynamique et stimulant.</p>
+       
       </div>
 
       <section class="fonction">
@@ -564,6 +563,7 @@
       </ul>
     </footer>
   </div>
-</body>
 
+</body>
+  <script src="script.js"></script>
 </html>
