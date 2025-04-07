@@ -272,6 +272,63 @@ a {
   overflow: auto;
 }
 
+.aboutme-title {
+  font-size: 28px;
+  color: #704C33;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  width: 100%; /* Largeur complète */
+  max-width: 80%; /* Limiter à 80% de la largeur de la modale */
+  margin: 0 auto; /* Centrer */
+}
+.aboutme-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #DEC9B6;
+  margin: 10px auto 0;
+}
+
+/**liens mes competence**/
+.aboutmequi {
+  font-size: 20px;
+  color: #704C33;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.aboutmequi:hover {
+  text-decoration: underline;
+}
+
+.aboutme-button {
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #04067c;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 55px 0px 55px 0px;
+  margin-top: 15px;
+}
+.aboutme-button:hover {
+  background-color: #DEC9B6;
+}
+.aboutme-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
 .modal-content-aboutme {
   background-color: #f8f4ef;
   width: 50%;
@@ -422,21 +479,21 @@ p {
   margin-top: 60px;
   font-family: "Cormorant Garamond", sans-serif;
   font-size: 16px;
-  color: #1F2A44;
+  color: #704C33;
 }
 
 .third_line {
   font-family: "Cormorant Garamond", sans-serif;
   font-size: 16px;
   /* Modifie uniquement cette ligne */
-  color: #1F2A44;
+  color: #704C33;
   text-align: center;
 }
 
 .second_line {
   font-family: "Cormorant Garamond", sans-serif;
   font-size: 14px;
-  color: #1F2A44;
+  color: #704C33;
   text-align: center;
 }
 
@@ -481,10 +538,7 @@ p {
   /* Adapter l'image sans la déformer */
   /**border-top-left-radius: 15px;
   border-top-right-radius: 15px;**/
-  /**top: -57px;
-  left: -3px;
-  gap: 0px;
-  opacity: 0px;**/
+  /** opacity: 0px;**/
 }
 
 .card_content {
@@ -528,25 +582,6 @@ a {
   background: #FFFFFF;
 }
 
-/* Section coeur (empty et full) */
-/**.projet .card_titles .empty {
-    position: absolute;
-    top: 83%;
-    right: 10%;
-    transform: translateY(-50%);
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.projet .card_titles .full {
-    position: absolute;
-    top: 83%;
-    right: 10%;
-    transform: translateY(-50%);
-    font-size: 25px;
-    cursor: pointer;
-    opacity: 0;
-}**/
 /* Conteneur du bouton "Site" */
 .projet .card .container_new p {
   display: flex;
@@ -576,39 +611,86 @@ a {
   right: 5%;
 }
 
+/* Style pour la fenêtre modale projets card*/
+.modal {
+  display: none; /* Cache la modale par défaut */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Fond sombre */
+  background-color: rgba(0, 0, 0, 0.4); /* Avec opacité */
+  padding-top: 60px;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-family: "Cormorant Garamond", sans-serif;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /** SECTION SKILLS **/
 .skills {
-  background-color: #1F2A44;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: rgba(3, 20, 90, 0.9882352941);
   padding: 2.5rem 1rem;
-  color: #f8f4ef;
+  color: #704C33;
   font-family: "Cormorant Garamond", serif;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-top: 2%;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 38, 0.15);
 }
 .skills .skills__main-title {
   text-align: center;
-  color: #f8f4ef;
-  font-size: 2.5rem;
+  color: #9a96ba;
+  font-size: 35px;
   margin-bottom: 2rem;
 }
 .skills .skills__title {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #DEC9B6;
+  font-size: 20px;
+  /**margin-bottom: 2rem;**/
+  color: #704C33;
 }
 .skills .skills__category {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .skills .skills__category h3 {
-  font-size: 1.8rem;
+  font-size: 24px;
   color: #DEC9B6;
-  margin: 1rem 0;
+  /** margin: 1rem 0;**/
   text-align: center;
 }
 .skills .skills__category-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 24px;
+  /**margin-bottom: 1rem;**/
   color: #DEC9B6;
   text-align: center;
 }
@@ -619,10 +701,10 @@ a {
   justify-content: center;
 }
 .skills .skills_card {
-  background-color: #f9f9f9;
-  border-radius: 15px;
-  width: 160px;
-  height: 120px;
+  background-color: #F8f4ef;
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
   padding: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -631,22 +713,17 @@ a {
 .skills .skills_card:hover {
   transform: translateY(-5px);
 }
-.skills .skills_card .skills_titles {
-  font-size: 1.2rem;
-  color: #1F2A44;
-  margin-top: 0.5rem;
-}
-.skills .skills_card .skills_subtitle {
-  font-size: 1rem;
-  color: #704C33;
-}
-.skills .skills_card .new p {
+.skills .skills_card .icon p {
   background-color: #DEC9B6;
   color: #1F2A44;
-  padding: 0.4rem;
+  padding: 0.2rem;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 12px;
   margin-bottom: 0.5rem;
+}
+.skills .skills_card .icon i {
+  font-size: 2rem;
+  color: #1F2A44;
 }
 
 /* Style de la section contact */
@@ -824,6 +901,7 @@ a {
   .projet_cards {
     flex: 1 1 calc(100% - 20px);
     /* 1 carte par ligne sur mobile */
+    width: 90%;
   }
   .reservation p {
     width: 100%;
@@ -861,6 +939,9 @@ a {
   .skills__cards {
     justify-content: center;
   }
+  /** .contact-container {
+       flex-direction: column;
+     }**/
 }
 @media (max-width: 480px) {
   .projet_cards {
