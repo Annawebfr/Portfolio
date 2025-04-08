@@ -490,7 +490,7 @@ p {
   text-align: center;
 }
 
-/** Projet **/
+/** section Projet **/
 .projet {
   display: flex;
   flex-wrap: wrap;
@@ -503,8 +503,8 @@ p {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: -4%;
-  /**padding-left: 20px;
-  padding-right: 20px;**/
+  padding-left: 20px;
+  padding-right: 20px;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 38, 0.15);
   border-radius: 10px;
 }
@@ -516,7 +516,7 @@ p {
   max-width: 340px;
   background-color: #ffffff;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  /** border-radius: 15px;**/
+  border-radius: 15px;
   padding: 5px 5px 5px 5px;
   overflow: hidden;
   position: relative;
@@ -571,7 +571,7 @@ a {
 }
 
 /* Conteneur du bouton "Site" */
-.projet .card .container_new p {
+.projet .card .container_code p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -587,33 +587,34 @@ a {
   line-height: 16.41px;
 }
 
-.projet .card .container_new {
+.projet .card .container_code {
   display: flex;
   justify-content: flex-end;
   margin-right: 25px;
 }
 
-.projet .card .new {
+.projet .card .code {
   position: absolute;
   top: 0%;
   right: 5%;
+  margin-top: 1%;
 }
 
 /* === Modal Styles section projet=== */
 .modal {
-  display: none;
+  display: none; /** Cacher la modal par défaut**/
   position: fixed;
-  z-index: 1000;
+  z-index: 1000; /* Valeur plus haute pour éviter les conflits*/
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto; /* Permet le scroll vertical uniquement*/
+  background-color: rgba(0, 0, 0, 0.5); /* Fond légèrement plus foncé*/
   transition: opacity 0.3s ease;
 }
 
-/* === Contenu de la modal === */
+/*  Contenu de la modal  */
 .modal-content {
   background-color: #F8f4ef;
   margin: 10% auto;
@@ -625,7 +626,32 @@ a {
   position: relative;
 }
 
-/* === Bouton de fermeture === */
+.modal-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-section:last-child {
+  border-bottom: none;
+}
+
+.modal-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #704C33;
+  margin-bottom: 0.5rem;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.modal-section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/*  Bouton de fermeture  */
 .close {
   position: absolute;
   top: 1rem;
@@ -643,23 +669,77 @@ a {
   outline: none;
 }
 
-/* === Bouton 'New' style === */
-.new p {
-  background-color: #007bff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
+/*  Bouton 'New' style  */
+/** .new {
+   p {
+     background-color: #007bff;
+     color: #fff;
+     padding: 0.5rem 1rem;
+     border-radius: 5px;
+     cursor: pointer;
+     text-align: center;
+     font-weight: bold;
+     text-decoration: none;
+     margin: 0;
+
+     &:hover {
+       background-color: #0056b3;
+     }
+   }
+
+   a {
+     text-decoration: none;
+   }
+ }**/
+.modal-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #704C33;
+  margin-bottom: 0.5rem;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #704C33;
+  line-height: 1.6;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 0.8rem;
+}
+
+.modal-objectifs p {
+  font-size: 30px;
+  color: #704C33;
+  line-height: 1.6;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 0.8rem;
+}
+
+.modal-section ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  font-family: "Cormorant Garamond", serif;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.modal-section a {
+  color: #704C33;
+  text-decoration: none;
   font-weight: bold;
-  text-decoration: none;
-  margin: 0;
+  font-family: "Cormorant Garamond", serif;
 }
-.new p:hover {
-  background-color: #0056b3;
+
+.modal-section a:hover {
+  text-decoration: underline;
 }
-.new a {
-  text-decoration: none;
+
+.modal-image img {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
 }
 
 /** SECTION SKILLS **/
@@ -749,6 +829,7 @@ a {
 
 /* Titre de la section contact */
 #contact h2 {
+  font-size: 25px;
   font-family: "Cormorant Garamond", sans-serif;
   text-align: center;
   color: #704C33;
@@ -860,11 +941,10 @@ a {
   gap: 6px;
 }
 
-a {
+.footer_anna {
   color: #f8f4ef;
   text-decoration: none;
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 25px;
 }
 
 /* Responsive - Ajuster la grille en fonction de la taille de l'écran */
