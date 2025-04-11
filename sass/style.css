@@ -44,7 +44,7 @@ html {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  animation: fadeOut 7s forwards;
+  animation: fadeOut 4s forwards;
 }
 .loading .loading_circle {
   position: relative;
@@ -707,12 +707,12 @@ a {
   margin-bottom: 0.8rem;
 }
 
-.modal-objectifs p {
-  font-size: 30px;
+.modal-objectifs {
+  font-size: 1.3rem;
+  font-weight: bold;
   color: #704C33;
-  line-height: 1.6;
-  font-family: "Cormorant Garamond", serif;
   margin-bottom: 0.8rem;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .modal-section ul {
@@ -1031,6 +1031,9 @@ a {
      }**/
 }
 @media (max-width: 480px) {
+  .welcome {
+    margin-top: 120px;
+  }
   .projet_cards {
     flex: 1 1 calc(100% - 20px);
     /* 1 carte par ligne sur mobile */
@@ -1038,6 +1041,9 @@ a {
   .projet_cards .footer_links {
     display: flex;
     flex-direction: column;
+  }
+  .footer_anna {
+    font-size: 16px;
   }
   .modal-content {
     width: 90%;

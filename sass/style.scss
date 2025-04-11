@@ -48,7 +48,7 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
     align-items: center;
     flex-direction: column;
     text-align: center;
-    animation: fadeOut 7s forwards;
+    animation: fadeOut 4s forwards;
   
     .loading_circle {
       position: relative;
@@ -742,13 +742,13 @@ a {
     font-family: "Cormorant Garamond", serif;
     margin-bottom: 0.8rem;
 }
-    .modal-objectifs p {
-        font-size: 30px;
-        color: #704C33;
-        line-height: 1.6;
-        font-family: "Cormorant Garamond", serif;
-        margin-bottom: 0.8rem; 
-      }
+.modal-objectifs {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #704C33;
+    margin-bottom: 0.8rem;
+    font-family: "Cormorant Garamond", serif;
+  }
       
   
   .modal-section ul {
@@ -1100,6 +1100,10 @@ a {
 
 @media (max-width: 480px) {
 
+    .welcome {
+        margin-top: 120px; // ajuste selon la taille de ton logo
+      }
+
     .projet_cards {
         flex: 1 1 calc(100% - 20px);
 
@@ -1109,7 +1113,9 @@ a {
             flex-direction: column;
         }
     }
-
+.footer_anna {
+    font-size: 16px;
+}
     .modal-content {
         width: 90%;
         /* Occupe presque tout l’écran */

@@ -7,29 +7,6 @@
   margin-bottom: 20px;
 }
 
-.btn {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  border-radius: 25px;
-  height: 30px;
-  width: 125px;
-  color: #ffffff;
-  background: linear-gradient(#dec9b6, #f8f4ef);
-  border: none;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: "Cormorant Garamond", sans-serif;
-  line-height: 18.75px;
-  font-size: 16px;
-  margin-top: 100px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-.btn:hover {
-  background: linear-gradient(#dec9b6, #f8f4ef);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-}
-
 .btn_liens {
   justify-content: center;
   display: flex;
@@ -52,11 +29,70 @@
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Cacher le menu et montrer le burger en mobile */
 @media (max-width: 480px) {
   .liens {
-    display: flex;
+    display: none;
     flex-direction: column;
-    height: 250px;
+    height: auto;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .burger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #704c33;
+  }
+  .liens.active {
+    display: flex;
+  }
+}
+/* En desktop : toujours montrer les liens, jamais le burger */
+@media (min-width: 481px) {
+  .liens {
+    display: flex !important;
+    flex-direction: row;
     gap: 10px;
   }
-}/*# sourceMappingURL=main.css.map */
+  .burger {
+    display: none;
+  }
+}
+/**@media (max-width: 480px) {
+
+    .liens {
+        display: flex;
+       flex-direction: column;
+       height: 250px;
+       gap: 10px;
+   }
+}**/
+/**.btn {
+    justify-content: center;
+    display: flex; 
+    align-items: center;
+    border-radius: 25px;
+    height: 30px;
+    width: 125px;
+    color: #ffffff;
+    background: linear-gradient(#dec9b6, #f8f4ef);
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: "Cormorant Garamond", sans-serif;
+    line-height: 18.75px;
+    font-size: 16px;
+    margin-top: 100px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background: linear-gradient(#dec9b6, #f8f4ef);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    }
+}**//*# sourceMappingURL=main.css.map */
