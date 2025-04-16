@@ -49,94 +49,99 @@ $tertiary-color: #DEC9B6; // Couleur d'accent
     flex-direction: column;
     text-align: center;
     animation: fadeOut 4s forwards;
-  
+
     .loading_circle {
-      position: relative;
-      width: 160px;
-      height: 160px;
-      margin-bottom: 25px;
-  
-      .loading_container {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        border: 8px solid transparent;
-        border-top: 8px solid #704c33;
-        animation: rotation 3s ease-in-out infinite, colorChange 3s ease-in-out infinite;
-        box-shadow: 0 2px 10px rgba(139, 3, 3, 0.2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-  
-      .loading_image {
+        position: relative;
         width: 160px;
         height: 160px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        border-radius: 50%;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-        padding: 8px;
-      }
+        margin-bottom: 25px;
+
+        .loading_container {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 8px solid transparent;
+            border-top: 8px solid #704c33;
+            animation: rotation 3s ease-in-out infinite, colorChange 3s ease-in-out infinite;
+            box-shadow: 0 2px 10px rgba(139, 3, 3, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading_image {
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            border-radius: 50%;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 8px;
+        }
     }
-  
+
     .loading_text {
-      margin-top: 0;
-      font-size: 50px;
-      font-family: "Cormorant Garamond";
-      color: #704c33;
-      background: linear-gradient(45deg, #f8f4ef, #DEC9B6);
-      animation: fadeIn 1s forwards;
-      border-radius: 55px 0px 55px 0px;
-      padding: 10px 20px;
+        margin-top: 0;
+        font-size: 50px;
+        font-family: "Cormorant Garamond";
+        color: #704c33;
+        background: linear-gradient(45deg, #f8f4ef, #DEC9B6);
+        animation: fadeIn 1s forwards;
+        border-radius: 55px 0px 55px 0px;
+        padding: 10px 20px;
     }
-  }
-  
-  /* Animations */
-  @keyframes rotation {
+}
+
+/* Animations */
+@keyframes rotation {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  @keyframes colorChange {
+}
+
+@keyframes colorChange {
     0% {
-      border-top-color: #f8f4ef;
+        border-top-color: #f8f4ef;
     }
+
     50% {
-      border-top-color: #704c33;
+        border-top-color: #704c33;
     }
+
     100% {
-      border-top-color: #dec9b6;
+        border-top-color: #dec9b6;
     }
-  }
-  
-  @keyframes fadeOut {
+}
+
+@keyframes fadeOut {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     100% {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
-  }
-  
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
+
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
+}
+
 
 /** section main container**/
 
@@ -303,19 +308,22 @@ a {
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
-    width: 100%; /* Largeur complète */
-    max-width: 80%; /* Limiter à 80% de la largeur de la modale */
-    margin: 0 auto; /* Centrer */
+    width: 100%;
+    /* Largeur complète */
+    max-width: 80%;
+    /* Limiter à 80% de la largeur de la modale */
+    margin: 0 auto;
+    /* Centrer */
 
     &::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 2px;
-      background-color: #DEC9B6;
-      margin: 10px auto 0;
+        content: '';
+        display: block;
+        width: 60px;
+        height: 2px;
+        background-color: #DEC9B6;
+        margin: 10px auto 0;
     }
-  }
+}
 
 /**liens mes competence**/
 .aboutmequi {
@@ -326,34 +334,35 @@ a {
     text-decoration: none;
     cursor: pointer;
     display: inline-block;
-  }
-  
-  .aboutmequi:hover {
-    text-decoration: underline;
-  }
-  .aboutme-button {
-  font-size: 12px;
-  color: #ffffff;
-  background-color: #04067c;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 55px 0px 55px 0px;
-  margin-top: 15px;
-
-  &:hover {
-    background-color: #DEC9B6;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
 }
 
-  
+.aboutmequi:hover {
+    text-decoration: underline;
+}
+
+.aboutme-button {
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #04067c;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 55px 0px 55px 0px;
+    margin-top: 15px;
+
+    &:hover {
+        background-color: #DEC9B6;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
 .modal-content-aboutme {
     background-color: #f8f4ef;
     width: 50%;
@@ -361,8 +370,10 @@ a {
     border-radius: 10px;
     text-align: center;
     position: relative;
-    top: 50%; /* Centre verticalement */
-    left: 50%; /* Centre horizontalement */
+    top: 50%;
+    /* Centre verticalement */
+    left: 50%;
+    /* Centre horizontalement */
     transform: translate(-50%, -50%);
     /* Ajustement parfait */
     /* Nouvelle règle pour éviter le dépassement */
@@ -468,6 +479,7 @@ h2 {
 p {
     font-size: 16px;
 }
+
 .third_line {
     font-family: "Cormorant Garamond", sans-serif;
     font-size: 16px;
@@ -507,19 +519,19 @@ p {
 /**section div welcome**/
 .welcome {
 
-.titre_projet {
-    text-align: center;
-    margin-top: 60px;
-    font-family: "Cormorant Garamond", sans-serif; 
-    color: #704C33;
-}
+    .titre_projet {
+        text-align: center;
+        margin-top: 60px;
+        font-family: "Cormorant Garamond", sans-serif;
+        color: #704C33;
+    }
 
-.second_line {
-    font-family: "Cormorant Garamond", sans-serif;
-    font-size: 14px;
-    color: #704C33;
-    text-align: center;
-}
+    .second_line {
+        font-family: "Cormorant Garamond", sans-serif;
+        font-size: 14px;
+        color: #704C33;
+        text-align: center;
+    }
 }
 
 /** section Projet **/
@@ -538,7 +550,7 @@ p {
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 38, 0.15);
-    border-radius: 10px;  
+    border-radius: 10px;
 
 }
 
@@ -564,7 +576,7 @@ p {
     /* Adapter l'image sans la déformer */
     /**border-top-left-radius: 15px;
     border-top-right-radius: 15px;**/
-   /** opacity: 0px;**/
+    /** opacity: 0px;**/
 }
 
 .card_content {
@@ -629,27 +641,31 @@ a {
 
 .projet .card .code {
     position: absolute;
-   top: 0%;
+    top: 0%;
     right: 5%;
     margin-top: 1%;
 }
 
 /* === Modal Styles section projet=== */
 .modal {
-    display: none; /** Cacher la modal par défaut**/
+    display: none;
+    /** Cacher la modal par défaut**/
     position: fixed;
-    z-index: 1000; /* Valeur plus haute pour éviter les conflits*/
+    z-index: 1000;
+    /* Valeur plus haute pour éviter les conflits*/
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow-y: auto; /* Permet le scroll vertical uniquement*/
-    background-color: rgba(0, 0, 0, 0.5); /* Fond légèrement plus foncé*/
+    overflow-y: auto;
+    /* Permet le scroll vertical uniquement*/
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fond légèrement plus foncé*/
     transition: opacity 0.3s ease;
-  }
-  
-  /*  Contenu de la modal  */
-  .modal-content {
+}
+
+/*  Contenu de la modal  */
+.modal-content {
     background-color: #F8f4ef;
     margin: 10% auto;
     padding: 2rem;
@@ -658,8 +674,9 @@ a {
     width: 80%;
     max-width: 600px;
     position: relative;
-  }
-  .modal-section {
+}
+
+.modal-section {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
@@ -684,8 +701,8 @@ a {
     font-family: "Cormorant Garamond", serif;
 }
 
-  /*  Bouton de fermeture  */
-  .close {
+/*  Bouton de fermeture  */
+.close {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
@@ -696,16 +713,16 @@ a {
     border: none;
     cursor: pointer;
     transition: color 0.2s ease;
-  
+
     &:hover,
     &:focus {
-      color: #000;
-      outline: none;
+        color: #000;
+        outline: none;
     }
-  }
-  
-  /*  Bouton 'New' style  */
- /** .new {
+}
+
+/*  Bouton 'New' style  */
+/** .new {
     p {
       background-color: #007bff;
       color: #fff;
@@ -726,57 +743,59 @@ a {
       text-decoration: none;
     }
   }**/
-  
-  .modal-section h3 {
+
+.modal-section h3 {
     font-size: 1.2rem;
     font-weight: 600;
     color: #704C33;
     margin-bottom: 0.5rem;
     font-family: "Cormorant Garamond", serif;
-  }
-  
-  .modal-content p {
+}
+
+.modal-content p {
     font-size: 1rem;
     color: #704C33;
     line-height: 1.6;
     font-family: "Cormorant Garamond", serif;
     margin-bottom: 0.8rem;
 }
+
 .modal-objectifs {
     font-size: 1.3rem;
     font-weight: bold;
     color: #704C33;
     margin-bottom: 0.8rem;
     font-family: "Cormorant Garamond", serif;
-  }
-      
-  
-  .modal-section ul {
+}
+
+
+.modal-section ul {
     padding-left: 20px;
     list-style-type: disc;
     font-family: "Cormorant Garamond", serif;
     color: #333;
     line-height: 1.6;
     font-size: 1rem;
-  }
-  
-  .modal-section a {
+}
+
+.modal-section a {
     color: #704C33;
     text-decoration: none;
     font-weight: bold;
     font-family: "Cormorant Garamond", serif;
-  }
-  
-  .modal-section a:hover {
+}
+
+.modal-section a:hover {
     text-decoration: underline;
-  }
-  .modal-image img {
+}
+
+.modal-image img {
     max-width: 80%;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-  }
-   
+}
+
 
 /** SECTION SKILLS **/
 .skills {
@@ -795,7 +814,7 @@ a {
         text-align: center;
         color: #9a96ba;
         font-size: 35px;
-       margin-bottom: 2rem; // Ajoute un espacement sous le titre
+        margin-bottom: 2rem; // Ajoute un espacement sous le titre
     }
 
     .skills__title {
@@ -811,7 +830,7 @@ a {
         h3 {
             font-size: 24px;
             color: #DEC9B6;
-           /** margin: 1rem 0;**/
+            /** margin: 1rem 0;**/
             text-align: center;
         }
     }
@@ -986,13 +1005,14 @@ a {
     display: flex;
     align-items: center;
     gap: 6px;
+    color: #f8f4ef;
 }
 
-.footer_anna  {
+.footer_anna {
     color: #f8f4ef;
     text-decoration: none;
     font-size: 25px;
- 
+
 }
 
 
@@ -1026,6 +1046,15 @@ a {
         left: 45%;
         align-items: center;
         gap: 20px;
+    }
+
+    .modal-content-skills {
+        width: 35%;
+    }
+
+    .skills-category p {
+        display: flex;
+        flex-direction: column;
     }
 
     .modal-content {
@@ -1093,7 +1122,8 @@ a {
     .skills__cards {
         justify-content: center;
     }
-   /** .contact-container {
+
+    /** .contact-container {
         flex-direction: column;
       }**/
 }
@@ -1102,7 +1132,7 @@ a {
 
     .welcome {
         margin-top: 120px; // ajuste selon la taille de ton logo
-      }
+    }
 
     .projet_cards {
         flex: 1 1 calc(100% - 20px);
@@ -1113,9 +1143,11 @@ a {
             flex-direction: column;
         }
     }
-.footer_anna {
-    font-size: 16px;
-}
+
+    .footer_anna {
+        font-size: 16px;
+    }
+
     .modal-content {
         width: 90%;
         /* Occupe presque tout l’écran */
@@ -1134,6 +1166,15 @@ a {
 
     .skills__cards {
         justify-content: center;
+    }
+
+    .modal-content-aboutme {
+        width: 90%;
+    }
+
+    .skills-category p {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -1157,4 +1198,15 @@ a {
     .skills__cards {
         justify-content: center;
     }
+
+    .modal-content-aboutme {
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .modal-content-aboutme {
+        width: 90%;
+    }
+
 }

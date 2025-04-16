@@ -278,9 +278,12 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  width: 100%; /* Largeur complète */
-  max-width: 80%; /* Limiter à 80% de la largeur de la modale */
-  margin: 0 auto; /* Centrer */
+  width: 100%;
+  /* Largeur complète */
+  max-width: 80%;
+  /* Limiter à 80% de la largeur de la modale */
+  margin: 0 auto;
+  /* Centrer */
 }
 .aboutme-title::after {
   content: "";
@@ -333,8 +336,10 @@ a {
   border-radius: 10px;
   text-align: center;
   position: relative;
-  top: 50%; /* Centre verticalement */
-  left: 50%; /* Centre horizontalement */
+  top: 50%;
+  /* Centre verticalement */
+  left: 50%;
+  /* Centre horizontalement */
   transform: translate(-50%, -50%);
   /* Ajustement parfait */
   /* Nouvelle règle pour éviter le dépassement */
@@ -602,15 +607,19 @@ a {
 
 /* === Modal Styles section projet=== */
 .modal {
-  display: none; /** Cacher la modal par défaut**/
+  display: none;
+  /** Cacher la modal par défaut**/
   position: fixed;
-  z-index: 1000; /* Valeur plus haute pour éviter les conflits*/
+  z-index: 1000;
+  /* Valeur plus haute pour éviter les conflits*/
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto; /* Permet le scroll vertical uniquement*/
-  background-color: rgba(0, 0, 0, 0.5); /* Fond légèrement plus foncé*/
+  overflow-y: auto;
+  /* Permet le scroll vertical uniquement*/
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fond légèrement plus foncé*/
   transition: opacity 0.3s ease;
 }
 
@@ -671,26 +680,26 @@ a {
 
 /*  Bouton 'New' style  */
 /** .new {
-   p {
-     background-color: #007bff;
-     color: #fff;
-     padding: 0.5rem 1rem;
-     border-radius: 5px;
-     cursor: pointer;
-     text-align: center;
-     font-weight: bold;
-     text-decoration: none;
-     margin: 0;
+    p {
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0;
 
-     &:hover {
-       background-color: #0056b3;
-     }
-   }
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
 
-   a {
-     text-decoration: none;
-   }
- }**/
+    a {
+      text-decoration: none;
+    }
+  }**/
 .modal-section h3 {
   font-size: 1.2rem;
   font-weight: 600;
@@ -939,6 +948,7 @@ a {
   display: flex;
   align-items: center;
   gap: 6px;
+  color: #f8f4ef;
 }
 
 .footer_anna {
@@ -971,6 +981,13 @@ a {
     left: 45%;
     align-items: center;
     gap: 20px;
+  }
+  .modal-content-skills {
+    width: 35%;
+  }
+  .skills-category p {
+    display: flex;
+    flex-direction: column;
   }
   .modal-content {
     width: 80%;
@@ -1027,8 +1044,8 @@ a {
     justify-content: center;
   }
   /** .contact-container {
-       flex-direction: column;
-     }**/
+      flex-direction: column;
+    }**/
 }
 @media (max-width: 480px) {
   .welcome {
@@ -1061,6 +1078,13 @@ a {
   .skills__cards {
     justify-content: center;
   }
+  .modal-content-aboutme {
+    width: 90%;
+  }
+  .skills-category p {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (max-width: 375px) {
   .modal-content {
@@ -1078,5 +1102,13 @@ a {
   }
   .skills__cards {
     justify-content: center;
+  }
+  .modal-content-aboutme {
+    width: 90%;
+  }
+}
+@media (max-width: 320px) {
+  .modal-content-aboutme {
+    width: 90%;
   }
 }/*# sourceMappingURL=style.css.map */
